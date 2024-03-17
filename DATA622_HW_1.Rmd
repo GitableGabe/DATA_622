@@ -1,0 +1,569 @@
+---
+title: 'DATA 622: Machine Learning and Big Data HW1'
+author: "Gabriel Campos"
+date: "Last edited `r format(Sys.time(), '%B %d, %Y')`"
+output:
+  pdf_document:
+    latex_engine: xelatex
+  geometry: left=0.5cm,right=0.5cm,top=1cm,bottom=2cm
+  html_document:
+    df_print: paged
+  html_notebook: default
+urlcolor: blue
+---
+
+
+
+# Packages
+```{r message=FALSE, warning=FALSE}
+library(readr)
+library(tidyverse)
+library(tidymodels)
+library(psych)
+library(caret)
+library(rpart)
+library(rpart.plot)
+library(corrplot)
+library(RColorBrewer)
+library(labelled)
+library(ggplot2)
+library(ggforce)
+library(kableExtra)
+library(gridExtra)
+library(Metrics)
+```
+
+# Instructions
+
+## **Exploratory analysis and essay**
+
+## *Pre-work*
+
+1. Visit the following website and explore the range of sizes of this dataset (from 100 to 5 million records):
+https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/ or (new) https://www.kaggle.com/datasets
+2. Select 2 files to download
+    Based on your computer's capabilities (memory, CPU), select 2 files you can handle (recommended one small, one large)
+3. Download the files
+4. Review the structure and content of the tables, and think about the data sets (structure, size, dependencies, labels, etc)
+5. Consider the similarities and differences in the two data sets you have downloaded
+6. Think about how to analyze and predict an outcome based on the datasets available
+7. Based on the data you have, think which two machine learning algorithms presented so far could be used to analyze the data
+
+## *Deliverable*
+
+1. Essay (minimum 500 word document)
+  Write a short essay explaining your selection of algorithms and how they relate to the data and what you are trying to do
+2. Exploratory Analysis (**EDA**) using R or Python (submit code + errors + analysis as notebook or copy/paste to document)
+  Explore how to analyze and predict an outcome based on the data available. This will be an exploratory exercise, so feel free to show errors and warnings that raise during the analysis. Test the code with both datasets selected and compare the results.
+
+## *Answer questions such as:*
+1. Are the columns of your data correlated?
+2. Are there labels in your data? Did that impact your choice of algorithm?
+3. What are the pros and cons of each algorithm you selected?
+4. How your choice of algorithm relates to the datasets (was your choice of algorithm impacted by the datasets you chose)?
+5. Which result will you trust if you need to make a business decision?
+6. Do you think an analysis could be prone to errors when using too much data, or when using the least amount possible?
+7. How does the analysis between data sets compare?
+
+Develop your exploratory analysis of the data and the essay in the following 2 weeks.
+
+# DATA
+
+```{r}
+url<-"https://raw.githubusercontent.com/GitableGabe/Data624_Data/main/"
+df_1k <- read.csv(paste0(url,"1000%20Sales%20Records.csv"))
+df_100k <- read.csv(paste0(url,"100000%20Sales%20Records.csv"))
+```
+
+# **EDA**
+
+Familiarization with Sales datasets extracted from [excelbi analytics](https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/) requires understanding of dataset composition, dimensions, column types, `NA` or `Null` value count, etc. 
+
+## Data Composition
+
+```{r}
+str(df_1k)
+```
+
+```{r}
+str(df_100k)
+```
+
+```{r, fig.height=2}
+kable(as.data.frame(table(df_1k$Region)) %>% arrange(desc(Freq)),
+      caption = "Frequency Region df_1k")
+```
+
+```{r}
+kable(as.data.frame(table(df_100k$Region)) %>% arrange(desc(Freq)),
+      caption = "Frequency Region df_100k")
+```
+
+
+```{r}
+kable(as.data.frame(table(df_1k$Item.Type )) %>% arrange(desc(Freq)),
+      caption = "Frequency Item.Type df_1k")
+```
+
+
+```{r}
+kable(as.data.frame(table(df_100k$Item.Type )) %>% arrange(desc(Freq)),
+            caption = "Frequency Item Type 100k")
+```
+
+
+```{r}
+kable(as.data.frame(table(df_1k$Sales.Channel )) %>% arrange(desc(Freq)),
+      caption = "Frequency Sales Channel 1k")
+```
+
+```{r}
+kable(as.data.frame(table(df_100k$Sales.Channel )) %>% arrange(desc(Freq)),
+      caption = "Frequency Sales Channel 100k")
+```
+
+```{r}
+var_label(df_1k)
+```
+
+```{r}
+var_label(df_100k)
+```
+
+
+```{r}
+# Dimensions
+dim_1k_tmp<-dim(df_1k)
+dim_100k_tmp<-dim(df_100k)
+# Class
+class_1k_tmp<-sapply(df_1k,class)
+class_100k_tmp<-sapply(df_100k,class)
+
+
+
+column_name_1k_tmp <- "Order.ID"
+
+# Count the number of duplicates in the specified column
+num_duplicates_1k_tmp <- sum(duplicated(df_1k[[column_name_1k_tmp]]) |
+                            duplicated(df_1k[[column_name_1k_tmp]],
+                                       fromLast = TRUE))
+
+column_name_100k_tmp <- "Order.ID"
+
+# Count the number of duplicates in the specified column
+num_duplicates_100k_tmp <- sum(duplicated(df_100k[[column_name_100k_tmp]]) |
+                            duplicated(df_100k[[column_name_100k_tmp]],
+                                       fromLast = TRUE))
+
+
+na_null_cnt_tmp<-(sum(colSums(is.na(df_1k) | is.null(df_1k)))+
+                    sum(colSums(is.na(df_100k) | is.null(df_100k))))
+
+region_tmp<-unique(df_1k$Region)
+country_len_tmp<-length(unique(df_1k$Country))
+
+```
+
+
+The dataset of size 1000 is stored to `df_1k` and the dataset size 100,000 is stored to `df_100k`
+
+* `df_1k` dimensions is `r dim_1k_tmp[1]` rows and `r dim_1k_tmp[2]` columns. 
+* `df_100k` dimensions is `r dim_100k_tmp[1]` rows and `r dim_100k_tmp[2]` columns.
+* The column types for df_1k are
+`r class_1k_tmp` 
+* The column types for df_100k are 
+`r class_100k_tmp`
+* Notable categories include
+  - `Order.Date` and `Ship.Date` the only date valued columns, but set to type `chr` and may need converting.
+  - `Order.ID` is compose of unique values with `r num_duplicates_1k_tmp` duplicates found in the `df_1k` data and `r num_duplicates_100k_tmp` found in the `df_100k` data.
+  - `Region` and `Country` both of which define location
+  - `Item.Type` for type of item sold.
+  - `Sales.Channel` defines sales method as an online or offline purchase, or e-purchase vs in-store.
+  - `Order.Priority` which has a ranking of severity.
+  - Attributes labeled with `Total` that are calculated values.
+  * Using the `length()` functions we see that `r country_len_tmp` countries are listed in the data.
+* Using the `table` function we see:
+    -Of the `Regions` listed `Sub-Saharan Africa` and `Europe` is most frequented.
+    - For `df_1k` `Beverages` and `Vegetables` is most frequented, however with `df_100k` `Office Supplies` and `Cereals` is.
+    - For `df_1k` more purchases are done `Offline` while for `df_100k` more is done `Online` Albiet by a small margin in both cases.
+
+With respect to dependencies, the formulas below highlight the dependency that exists with calculated variables with the label `Total` in there Attribute name.
+
+$Total.Cost=Units.Sold\times Unit.Cost$ making Total.Cost dependent on Units.Sold and Unit Cost
+$Total.Revenue=Units.Sold\times Unit.Price$ making Total.Revenue dependent on Units.Sold and Unit.Price
+$Total.Profit=Total.Revenue-Total.Cost$ making the subsequent totals above the dependent variables for Total.Profit
+
+The Order.Priority have a dependency based on ranking of `r unique(df_1k$Order.Priority)`
+Which is Critical, High, Medium, Low in ascending order.
+
+Date values are dependent in interpretation, with calculation of `Order.Date` and `Ship.Date` being a factor of performance or timeliness.
+
+
+## Data Tranformation
+
+```{r}
+df_1k[['Order.Date']] <- as.Date(df_1k[['Order.Date']], "%m/%d/%Y")
+df_1k[['Ship.Date']] <- as.Date(df_1k[['Ship.Date']], "%m/%d/%Y")
+
+df_100k[['Order.Date']] <- as.Date(df_100k[['Order.Date']], "%m/%d/%Y")
+df_100k[['Ship.Date']] <- as.Date(df_100k[['Ship.Date']], "%m/%d/%Y")
+
+df_1k$Order.Priority <- as.factor(df_1k$Order.Priority)
+df_100k$Order.Priority <- as.factor(df_100k$Order.Priority)
+```
+
+The most obvious transformations were the date values as noted in *EDA* and factoring the categories in `Order.Priority`
+
+```{r}
+df_1k$Sales.Channel <- as.factor(df_1k$Sales.Channel)
+df_100k$Sales.Channel <- as.factor(df_100k$Sales.Channel)
+df_1k$Item.Type <- as.factor(df_1k$Item.Type)
+df_100k$Item.Type <- as.factor(df_100k$Item.Type)
+df_1k$Region <- as.factor(df_1k$Region)
+df_100k$Region <- as.factor(df_100k$Region)
+df_1k$Country <- as.factor(df_1k$Country)
+df_100k$Country <- as.factor(df_100k$Country)
+
+```
+
+`Sales.Channel`,`Item.Type` and `Region` were also logical choices, considering the amount of unique values for `Country` and the nature of its relationship with Region, I believe if I make a model with Region, Country would be excluded.
+Order.ID are just arbitrary, chronological or incremented numbers therefor it was not set as a factor.
+
+```{r}
+levels(df_1k$Region)
+```
+
+
+## Correlation and Skewness
+
+```{r}
+describe(df_1k%>%
+           dplyr::select(contains("Unit") | contains("Total"))) %>% 
+  dplyr::select(c(mean,sd,min,max,range,se,skew))
+```
+
+```{r}
+describe(df_100k%>%
+           dplyr::select(contains("Unit") | contains("Total"))) %>% 
+  dplyr::select(c(mean,sd,min,max,range,se,skew))
+```
+
+```{r}
+plot_numeric_1k<-df_1k%>%
+      dplyr::select(contains("Unit") | contains("Total")) %>%
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "lightgreen", alpha=0.9, color="lightgreen") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue",
+                   color="darkred", position="identity", bins = 40)
+
+plot_numeric_100k<-df_100k%>%
+      dplyr::select(contains("Unit") | contains("Total")) %>%
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "lightgreen", alpha=0.9, color="lightgreen") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "pink",
+                   color="darkred", position="identity", bins = 40)
+
+grid.arrange(plot_numeric_1k,plot_numeric_100k,ncol=1)
+```
+
+```{r}
+par(mfrow = c(1, 2), mar = c(0, 0, 3, 0))
+plot_corr_1k <- cor(df_1k %>%
+                      dplyr::select(contains("Unit") | contains("Total")))
+corrplot(plot_corr_1k, tl.col = 'darkgreen', diag = FALSE, type = "lower",
+         order = "hclust", addCoef.col = "darkgreen",
+         title = "1k",mar=c(0,0,1,0))
+
+# Plot correlation for df_100k
+plot_corr_100k <- cor(df_100k %>%
+                        dplyr::select(contains("Unit") | contains("Total")))
+corrplot(plot_corr_100k, tl.col = 'darkgreen', diag = FALSE, type = "lower",
+         order = "hclust", addCoef.col = "darkgreen",
+         title = "100k",mar=c(0,0,1,0))
+
+
+```
+
+Skewness is a measure of symmetry, therefore the values near zero, despite one being negative, did not particularly stand out, however for both size data sets, Total - Revenue, Cost and Profit all are right skewed.
+    Skewness = 0: perfect symmetry.
+    Skewness < 0: Negatively is left skewed or has a tail.
+    Skewness > 0: Positive is right skewed or has a right tail.
+    
+Concern is not too big with respect to these values as for our model I can try to normalize it as much as possible. 
+
+Correlation does more than just support the obvious relationships noted earlier, rather it help identify if we have multicollinearity. Multicollinearity occurs when two or more independent variables in a data frame have a high correlation with one another, and can cause issues with stability and size of an estimated regression coefficient, which in turn makes unreliable inferences for our predictor variables.
+
+Of our variables, Unit.Cost and Total.Profit have the highest correlation, while Unit.-Cost,Price and Sold show the weakest. The way to interpret the correlation is understanding that the higher the absolute value of a correlation coefficient is, the stronger the relationship.
+
+Because I suspect multicollinearity, I've chosen to not create my second model off the numeric values, rather I am opting to make a decision tree using one of the categorical values, whose variables I've set to factors earlier. For my first I plan to do a simple regression but I suspect normalizing it will not impact the data much.
+
+# Model Selection and logic
+
+
+## Simple Linear regression
+For my first model I will choose a simple linear regression after normalizing the data.
+
+### Normalization
+
+[Statology](https://www.statology.org/how-to-normalize-data-in-r/) provides a great walk through for normalization.
+Normalization ensures all variables contribute equally to a model vs having one contribute more because of its value.
+
+
+```{r}
+# Function for normalization
+min_max_norm <- function(x) {
+    (x - min(x)) / (max(x) - min(x))
+}
+
+# Run function using lapply and only with the numeric values
+norm_1k <- as.data.frame(lapply(df_1k %>%
+                                    keep(is.numeric) , min_max_norm))
+
+norm_100k <- as.data.frame(lapply(df_100k %>%
+                                      keep(is.numeric) , min_max_norm))
+```
+
+```{r message=FALSE, warning=FALSE}
+#stats
+describe(norm_1k, fast=TRUE) %>% 
+  dplyr::select(c(-vars,-n))
+
+#distribution
+norm_1k %>% 
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "green", alpha=0.9, color="darkgreen") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "pink", 
+                   color="darkred", position="identity", bins = 40) +
+    theme_minimal()
+```
+
+```{r message=FALSE, warning=FALSE}
+#stats
+describe(norm_100k, fast=TRUE) %>% 
+  dplyr::select(c(-vars,-n))
+
+#distribution
+norm_100k %>% 
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "green", alpha=0.9, color="darkgreen") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "pink", 
+                   color="darkred", position="identity", bins = 40) +
+    theme_minimal()
+```
+
+
+
+
+## Model
+
+
+```{r}
+set.seed(777)
+
+simp_reg_sample_1k <- norm_1k$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+simp1k_train  <- norm_1k[simp_reg_sample_1k, ]
+simp1k_test <- norm_1k[-simp_reg_sample_1k, ]
+
+
+simp_reg_sample_100k <- norm_100k$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+simp100k_train  <- norm_100k[simp_reg_sample_100k, ]
+simp100k_test <- norm_100k[-simp_reg_sample_100k, ]
+
+```
+
+
+```{r}
+simptrain1k_model<- lm(Total.Revenue~Units.Sold, data=simp1k_train )
+
+summary(simptrain1k_model)
+# Make predictions
+prediction <- simptrain1k_model %>% predict(simp1k_test)
+
+class(simp1k_test$Total.Revenue)
+```
+
+
+```{r}
+# Model performance
+data.frame(
+  MAE = mae(prediction, simp1k_test$Total.Revenue),
+  RMSE = RMSE(prediction, simp1k_test$Total.Revenue),
+  R2 = R2(prediction, simp1k_test$Total.Revenue)
+)
+```
+
+```{r}
+simptrain100k_model<- lm(Total.Revenue~Units.Sold, data=simp100k_train )
+
+summary(simptrain100k_model)
+# Make predictions
+prediction <- simptrain100k_model %>% predict(simp100k_test)
+
+class(simp100k_test$Total.Revenue)
+```
+
+```{r}
+# Model performance
+data.frame(
+  MAE = mae(prediction, simp100k_test$Total.Revenue),
+  RMSE = RMSE(prediction, simp100k_test$Total.Revenue),
+  R2 = R2(prediction, simp100k_test$Total.Revenue)
+)
+```
+
+
+The steps taken for a simple regression were splitting the normalized data into a train and test only using the numeric values. Using `Units.Sold` as the predictor variable I run my models.
+The R-squared value of 0.2826 and 0.2769 shows these are terrible models, but that was expected from the EDA. The models accuracy is about 27%-28% which just shows it was not a good model.
+
+
+## Decision Tree
+To simplify decision tree, the approach I will use a attribute with a lower number of unique values, but I've chosen **not** to go with Sales.Channel, since this model is very much random and I hope to implement a decision tree with more than 2 possible outcomes for analysis. With this in mind I will make a decision tree model using Region, which I already suspect will create an outcome where Europe and Sub-Saharan Africa are the most likely the regions that will be highlighted in my decision tree, because of its high frequency in the data frames. I will use [rpart](https://cran.r-project.org/web/packages/rpart/rpart.pdf) for my decision tree.
+NOTE: this will be my first time using rpart, so I am curious on the results.
+
+
+
+
+```{r}
+#split into test/train set
+
+#For df_1k
+set.seed(2341)
+sample_set <- sample(nrow(df_1k), round(nrow(df_1k)*0.75), replace = FALSE)
+df_1k_train <- df_1k[sample_set, ]
+df_1k_test <- df_1k[-sample_set, ]
+
+# For df_100k
+
+sample_set <- sample(nrow(df_100k), round(nrow(df_100k)*0.75), replace = FALSE)
+df_100k_train <- df_100k[sample_set, ]
+df_100k_test <- df_100k[-sample_set, ]
+
+#check class distribution of original, train, and test sets
+table_1k<-round(prop.table(table(dplyr::select(df_1k, Region), exclude = NULL)),
+            4) * 100
+table_1k_train<-round(prop.table(table(dplyr::select(df_1k_train , Region), exclude = NULL)),
+            4) * 100
+table_1k_test<-round(prop.table(table(dplyr::select(df_1k_test, Region), exclude = NULL)),
+            4) * 100
+
+table_100k<-round(prop.table(table(dplyr::select(df_100k, Region), exclude = NULL)),
+            4) * 100
+table_100k_train<-round(prop.table(table(dplyr::select(df_100k_train, Region), exclude = NULL)),
+            4) * 100
+table_100k_test<-round(prop.table(table(dplyr::select(df_100k_test, Region), exclude = NULL)),
+            4) * 100
+
+
+as.data.frame(table_1k)
+as.data.frame(table_1k_train)
+as.data.frame(table_1k_test)
+
+as.data.frame(table_100k)
+as.data.frame(table_100k_train)
+as.data.frame(table_100k_test)
+
+
+```
+
+
+
+
+Incorporating `Order.ID` in my model kept causing my file to crash despite it not being made into a factor, therefore I opted to remove it, so that I may see the results.
+
+```{r}
+df_1k_train<-df_1k_train%>%
+                dplyr::select(-c(Order.ID))
+```
+
+
+
+```{r}
+#build model via rpart package
+model_1k <- rpart(Region ~ Units.Sold,
+                         method = "class",
+                         data = df_1k_train,
+                         control=rpart.control(minsplit=1, minbucket=1, cp=0.001)
+                          )
+
+#display decision tree
+# rpart.plot(model_100k)
+rpart.plot(model_1k, box.palette = "Blues")
+```
+Because the data is undecipherable in this form I opted to make a simpler one with just categorical values.
+
+```{r}
+#build model via rpart package
+model_1k <- rpart(Item.Type ~ Order.Priority,
+                         method = "class",
+                         data = df_1k_train,
+                         control=rpart.control(minsplit=1, minbucket=1, cp=0.001)
+                          )
+
+#display decision tree
+# rpart.plot(model_100k)
+rpart.plot(model_1k, box.palette = "Blues")
+```
+
+
+
+```{r}
+
+#build model via rpart package
+model_100k <- rpart(Region ~ .-Country,
+                         method = "class",
+                         data = df_100k_train,
+                         control=rpart.control(minsplit=1, minbucket=1, cp=0.001)
+                          )
+
+#display decision tree
+# rpart.plot(model_100k)
+rpart.plot(model_100k, box.palette = "Blues")
+```
+
+# Response to Questions
+
+## 1. Are the columns of your data correlated?
+
+Yes they were. Its apparent in just the relationships involved, such as `Country` being categorized in `Region`, and the numeric attributes with label "Total" being derived from their calculations. I also immediately noted the multicollinearity which made it VERY difficult on how I wanted to proceed.
+
+## 2. Are there labels in your data? Did that impact your choice of algorithm?
+
+No, after checking both data sets, neither had any labels.
+
+## 3. What are the pros and cons of each algorithm you selected?
+
+The Simple Regression model helped identify the garbage in garbage out data results we wer getting, and because of my familiarity with it I was able to assess and understand the results very easily.
+
+In contrast, this is the first time I'm using a Regression Tree and I am not 100% comfortable with selecting data that is best used for this model. For instance, originally I had decided to select `Region` and `Units.Sold` for my tree, but `R` did not make a useful of even viewable visual. I ended up using to small categories in the 1k data so the result was printable, but in contest with the data, all I can decipher is based on the frequency this is the likelihood of a level of priority based on `Item.Type`, which is still a somewhat confusing assessment for me. I also read through the [cran r_project.org documentation for rpart](https://cran.r-project.org/web/packages/labelled/vignettes/intro_labelled.html) their is limitations to the amount of factors you may use, forcing me to disregard Country altogether. Using the larger data set I feel a great deal of data was ommitted considersing only 2 regions were represented here.
+
+4. How your choice of algorithm relates to the datasets (was your choice of algorithm impacted by the datasets you chose)?
+
+I chose simple regression when I figured the data had multicollinearity and assumed that my transformations would not do much to make the data a better fit.
+
+5. Which result will you trust if you need to make a business decision?
+
+Simple regression. I would have to circle back to business and explain why the data would not be a suitable fit for prediction or analysis.
+
+6. Do you think an analysis could be prone to errors when using too much data, or when using the least amount possible?
+
+Definitely the Decision Tree, but to be frank operator errors and unfamiliarity with this method is definitely a major factor to account for.
+
+7. How does the analysis between data sets compare?
+
+No. After I assess the lack of usefulness of the numeric values I opted to make this a learning opportunity in using a decision tree and familiarizing myself with it for future use.
+
+```{r}
+rm(list = ls(pattern = "_tmp$"))
+```
+
+
