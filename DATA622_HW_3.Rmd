@@ -1,0 +1,504 @@
+---
+title: 'DATA 622: Machine Learning and Big Data HW3'
+author: "Gabriel Campos"
+date: "Last edited `r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    df_print: paged
+  geometry: left=0.5cm,right=0.5cm,top=1cm,bottom=2cm
+  html_notebook: default
+  pdf_document:
+    latex_engine: xelatex
+urlcolor: blue
+---
+# Library
+
+```{r library_load, warning=FALSE}
+library(caret)
+library(corrplot)
+library(e1071)
+library(ggplot2)
+library(ggforce)
+library(labelled)
+library(lubridate)
+library(mlbench)
+library(Metrics)
+library(ModelMetrics)
+library(psych)
+library(pROC)
+library(randomForest)
+library(readr)
+library(RColorBrewer)
+library(rpart)
+library(rpart.plot)
+library(tidymodels)
+library(tidyverse)
+```
+
+
+# Description
+
+## Decision Trees Algorithms
+
+### Pre-work
+
+Read this blog: https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees which shows some of the issues with decision trees.
+
+Choose a dataset from a source in Assignment #1, or another dataset of your choice.
+
+### Assignment work
+
+Based on the latest topics presented, choose a dataset of your choice and create a Decision Tree where you can solve a classification problem and predict the outcome of a particular feature or detail of the data used.
+
+Switch variables\* to generate 2 decision trees and compare the results.
+Create a random forest and analyze the results.
+
+Based on real cases where desicion trees went wrong, and 'the bad & ugly' aspects of decision trees (https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees), how can you change this perception when using the decision tree you created to solve a real problem?
+
+### Deliverable
+
+Essay (minimum 500 word document)
+Write a short essay explaining your analysis, and how you would address the concerns in the blog (listed in pre-work)
+
+Exploratory Analysis using R or Python (submit code + errors + analysis as notebook or copy/paste to document)
+
+\* **Note:**
+1. We are trying to train 2 different decision trees to compare bias and variance - so switch the features used for the first node (split) to force a different decision tree (How did the performance change?)
+2. You will create 3 models: 2 x decision trees (to compare variance) and a random forest
+
+# Data Load
+
+```{r, echo=FALSE}
+df_1k<-read.csv("https://raw.githubusercontent.com/GitableGabe/Data624_Data/main/1000%20Sales%20Records.csv")
+```
+
+# EDA
+
+## Initial Exploration
+
+```{r}
+head(df_1k)
+```
+
+
+```{r}
+describe(df_1k)
+```
+
+```{r}
+str(df_1k)
+```
+
+```{r}
+summary(df_1k)
+```
+
+```{r}
+glimpse(df_1k)
+```
+
+```{r}
+look_for(df_1k)
+```
+
+```{r}
+apply(df_1k, 2, function(x) sum(is.na(x)))
+```
+
+
+```{r}
+unique(df_1k$Region)
+```
+
+```{r}
+#unique(df_1k$Country)
+```
+
+```{r}
+length(unique(df_1k$Country))
+```
+
+```{r}
+table(df_1k$Item.Type)
+
+```
+
+```{r}
+table(df_1k$Sales.Channel)
+```
+
+```{r}
+unique(df_1k$Order.Priority)
+```
+
+```{r}
+#select numeric columns 1k
+df_1k_num <- df_1k %>% 
+  keep(is.numeric) 
+
+#stats
+describe(df_1k_num, fast=TRUE) %>% 
+  dplyr::select(c(-vars,-n))
+```
+
+```{r}
+#distributions
+df_1k_num %>%
+  pivot_longer(cols = 1:6, names_to = "variable", values_to = "value") %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density() +
+    geom_histogram(aes(y = after_stat(density)), bins = 40, alpha = 0.2, fill = "lightblue", color = "darkgreen")
+```
+
+
+From the initial EDA we see the following:
+
+* The data set is 1,000 rows and 14 columns
+* No labels are found in the variables
+* High range among the integers and doubles
+* Variable types include:
+  * 2 integers, 5 doubles and 7 character types
+* 5 regions are noted with 185 countries associated with it
+* Priority is categorized C(Critical), H(High), M(Medium), and L(Low)
+* No variables seem to be missing values
+* Dependencies among the variables are as follows:
+  * $Total.Cost=Units.Sold\times Unit.Cost$
+  * $Total.Revenue-Units.Sold\times Unit.Price$
+  * $Total.Profit-Total.Revenue-Total.Cost$
+  * $Total.Cost$ and $Total.Revenue$ depends on $Units.Sold,Units.Cost \ and \ Unit.Price$
+* Distribution of the data is noted with several skewed variables which will need transformation and normalizing
+
+## Correlation
+
+```{r}
+corr_matrix <- cor(df_1k_num)
+corrplot(corr_matrix, 
+         type = "lower", 
+         order = "hclust", 
+         tl.col = "blue", 
+         addCoef.col = "white", 
+         diag = FALSE, 
+         title = "Corrplot",
+         mar = c(0, 0, 1, 0),
+         col = brewer.pal(10, "RdYlBu"))
+
+```
+
+Looking at the correlation plot we see the following:
+
+* Weak correlation between Unit.Price, Unit.Cost and Units.Sold
+* Mild correlation between Total.Profit, Total.Revenue, Total.Cost and Units.Sold
+* Mild correlation between Unit.Price, Unit.Cost and Total.Profit
+* High correlation between Unit.Price and Unit.Cost
+* High correlation between Total.Profit and Total Revenue
+* High correlation between Total,Cost and Total.Revenue
+
+I suspect multicollinearity but will use and additional method to confirm.
+
+## VIF
+
+```{r, warning=FALSE}
+set.seed(321)
+
+sample_1k_train <- df_1k_num$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+df_train_1k  <- df_1k_num[sample_1k_train, ]
+df_test_1k <- df_1k_num[-sample_1k_train, ]
+
+
+model<- lm(Total.Revenue~., data=df_train_1k )
+
+vif_values<-car::vif(model)
+
+print(vif_values)
+```
+
+The values interpret as:
+* Order.ID has low multicollinearity
+* Units.Sold low multicollinearity
+* Unit.Price and Unit.Cost has high levels of multicollinearity
+* Total.Cost and Total.Profit has moderate levels of multicollinearity.
+
+# Transformation
+
+Only transformation needed are:
+* date values to Month, Day and Year 
+* levels for categorical values.
+* scaling for pre-processing for modelling
+* Attribute selection of relevant data will also be best, which includes excluding Order.ID and Country
+
+```{r}
+df_1k_norm <- df_1k %>%
+  mutate(
+    `Order.Date` =  mdy(`Order.Date`),  # Convert to Date using lubridate's mdy function
+    `Ship.Date` = mdy(`Ship.Date`),
+    `Sales.Channel` = as.factor(`Sales.Channel`),
+    `Order.Priority` = as.factor(`Order.Priority`),
+    `Item.Type` = as.factor(`Item.Type`),
+    `Region` = as.factor(`Region`),
+    `Country` = as.factor(`Country`),
+    `Order.ID` = as.character(`Order.ID`)
+  ) %>%
+  predict(preProcess(., method = c("center", "scale")), .) 
+```
+
+```{r}
+levels(df_1k_norm$Sales.Channel)
+```
+
+
+```{r}
+df_1k_norm %>% 
+  keep(is.numeric) %>%  
+  describe(fast=TRUE) %>% 
+  dplyr::select(-c(vars,n))
+
+#distribution
+df_1k_norm %>% 
+  keep(is.numeric) %>%  
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density() +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="darkgreen", position="identity",bins = 40) 
+```
+
+```{r}
+df_1k_norm <- df_1k_norm %>% 
+  dplyr::select(-c(Country,Order.ID,)) 
+```
+
+
+# Models
+
+## SVM
+
+```{r}
+set.seed(1234)
+
+df_1k_norm_svm <- df_1k_norm 
+
+#split
+training.samples <- df_1k_norm_svm$Total.Revenue %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train_df  <- df_1k_norm_svm[training.samples, ]
+test_df <- df_1k_norm_svm[-training.samples, ]
+
+svm_model<-svm(formula = Total.Revenue ~ ., data = train_df,
+               type = 'eps-regression')
+
+print(svm_model)
+```
+
+**Note**
+**SVM-Kernel:  radial** is the default
+
+```{r}
+predictions_SVM <- predict(svm_model, newdata = test_df) %>% 
+  bind_cols(test_df)
+
+predictions_SVM$...1 <- as.numeric(predictions_SVM$...1)
+```
+
+### Performance and Comparison
+
+```{r}
+MAE <- MAE(predictions_SVM$Total.Revenue, predictions_SVM$...1)
+RMSE <- RMSE(predictions_SVM$Total.Revenue, predictions_SVM$...1)
+R2 <- R2(predictions_SVM$Total.Revenue, predictions_SVM$...1)
+
+# Create a data frame to store the results
+a_svm <- data.frame(Model = "SVM",
+                MAE = MAE,
+                RMSE = RMSE,
+                R2 = R2)
+
+# Print the results
+print(a_svm)
+```
+
+## SLR
+
+```{r}
+df_1k_2 <- df_1k  
+
+preproc1 <-preProcess(df_1k_2, method=c("center", "scale"))
+norm1 <- predict(preproc1,df_1k_2)
+
+training.samples_slr <- norm1$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data_slr  <- norm1[training.samples_slr, ]
+test.data_slr <- norm1[-training.samples_slr, ]
+
+model_slr<- lm(Total.Revenue~Units.Sold, data=train.data_slr )
+
+# Make predictions
+predictions_slr <- model_slr %>% predict(test.data_slr)
+
+# Calculate the metrics
+MAE_slr <- MAE(predictions_slr, test.data_slr$Total.Revenue)
+RMSE_slr <- RMSE(predictions_slr, test.data_slr$Total.Revenue)
+R2_slr <- R2(predictions_slr, test.data_slr$Total.Revenue)
+
+# Create a data frame to store the results
+a_slr <- data.frame(Model = "Simple Linear Regression",
+                     MAE = MAE_slr,
+                     RMSE = RMSE_slr,
+                     R2 = R2_slr)
+
+# Print the results
+print(a_slr)
+```
+
+## MLR
+
+```{r}
+norm2 <- norm1 %>% 
+  select(-c(Country, Unit.Cost, Unit.Price, Total.Cost, Total.Profit, Order.ID, Ship.Date, Order.Date))
+
+set.seed(146)
+
+training.samples_mlr <- norm2$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data_mlr  <- norm2[training.samples_mlr, ]
+test.data_mlr <- norm2[-training.samples_mlr, ]
+
+
+model_mlr<- lm(Total.Revenue~., data=train.data_mlr )
+
+test.data_mlr <- na.omit(test.data_mlr)
+# Make predictions
+predictions_mlr <- model_mlr %>% predict(test.data_mlr)
+
+# Calculate the metrics
+MAE_mlr <- MAE(predictions_mlr, test.data_mlr$Total.Revenue)
+RMSE_mlr <- RMSE(predictions_mlr, test.data_mlr$Total.Revenue)
+R2_mlr <- R2(predictions_mlr, test.data_mlr$Total.Revenue)
+
+# Create a data frame to store the results
+a_mlr <- data.frame(Model = "Multiple Linear Regression",
+                     MAE = MAE_mlr,
+                     RMSE = RMSE_mlr,
+                     R2 = R2_mlr)
+
+# Print the results
+print(a_mlr)
+```
+
+## First Decision Tree
+
+```{r}
+set.seed(1234)
+
+tree <- rpart(Total.Revenue ~., data = train_df, cp = 0.004,  method = 'anova')
+
+predictions <- predict(tree, newdata = test_df) %>% 
+  bind_cols(test_df)
+
+predictions$...1 <- as.numeric(predictions$...1)
+
+a_tree <- data.frame(Model = "Decision Tree 1",
+                #mean absolute error
+                MAE = MAE(predictions$Total.Revenue, predictions$...1),
+                #rmse Root Mean Squared Error
+                RMSE = RMSE(predictions$Total.Revenue, predictions$...1),
+                #r squared
+                R2 = R2(predictions$Total.Revenue, predictions$...1)
+)
+```
+## 2nd Decision Tree
+
+```{r}
+set.seed(123456)
+#colnames(df1k_norm1)
+
+df_1k_norm3 <- df_1k_norm %>%
+  select(-c("Unit.Price","Unit.Cost","Total.Cost", "Total.Profit"))
+
+#split
+training.samples3 <- df_1k_norm3$Total.Revenue %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train3  <- df_1k_norm3[training.samples3, ]
+test3 <- df_1k_norm3[-training.samples3, ]
+
+#train using rpart, cp- complexity, smaller # = more complexity, 
+#method- anova is for regression
+tree3 <- rpart(Total.Revenue ~., data = train3, cp = 0.004, method = 'anova')
+
+predictions3 <- predict(tree3, newdata = test3) %>% 
+  bind_cols(test3)
+
+predictions3$...1 <- as.numeric(predictions3$...1)
+
+a_tree2 <- data.frame(Model = "Decision Tree 2",
+                #mean absolute error
+                MAE = MAE(predictions3$Total.Revenue, predictions3$...1),
+                #rmse Root Mean Squared Error
+                RMSE = RMSE(predictions3$Total.Revenue, predictions3$...1),
+                #r squared
+                R2 = R2(predictions3$Total.Revenue, predictions3$...1)
+)
+```
+## Random Forest
+
+```{r}
+set.seed(201)
+rf <- randomForest(formula = Total.Revenue ~ ., 
+                   data = train_df, importance=TRUE)
+
+predictions4 <- predict(rf, newdata = test_df) %>% 
+  bind_cols(test_df)
+
+predictions4$...1 <- as.numeric(predictions4$...1)
+
+a_rf <- data.frame(Model = "Random Forest",
+                #mean absolute error
+                MAE = MAE(predictions4$Total.Revenue, predictions4$...1),
+                #rmse Root Mean Squared Error
+                RMSE = RMSE(predictions4$Total.Revenue, predictions4$...1),
+                #r squared
+                R2 = R2(predictions4$Total.Revenue, predictions4$...1)
+)
+```
+
+## Tuned Random Forest
+
+```{r}
+set.seed(908)
+
+train1 <- train_df %>% 
+  dplyr::select(-Total.Revenue)
+
+bestmtry <- tuneRF(train1,train_df$Total.Revenue, stepFactor = 2, improve = 0.01,
+                   trace=T, plot= F, doBest=TRUE, importance=TRUE)
+
+predictions5 <- predict(bestmtry, newdata = test_df) %>% 
+  bind_cols(test_df)
+
+predictions5$...1 <- as.numeric(predictions5$...1)
+
+a_trf <- data.frame(Model = "Tuned Random Forest",
+                #mean absolute error
+                MAE = MAE(predictions5$Total.Revenue, predictions5$...1),
+                #rmse Root Mean Squared Error
+                RMSE = RMSE(predictions5$Total.Revenue, predictions5$...1),
+                #r squared
+                R2 = R2(predictions5$Total.Revenue, predictions5$...1)
+)
+```
+
+```{r}
+rbind( a_svm, a_slr, a_mlr, a_tree, a_tree2, a_trf )
+```
+
+# Essay
+
+The article [Decision Tree Ensembles to Predict Coronavirus Disease 2019 Infection: A Comparative Study](https://www.hindawi.com/journals/complexity/2021/5550344/) discusses machine learning algorithms specifically for Decision tree ensembles, to predict Covid-19 positive cases base on common lab tests. The article highlights the importance of classifiers designed for imbalanced datasets, with supporting information on how decision tree ensembles designed through classifiers for imbalanced data is better performing thatn standard methods. In the examples given, age was a major classifier in the tree ensemble, but future studies would incorporate other classifiers to understand the impact. In [A novel approach to predict COVID-19 using support vector machine](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8137961/) a paper presents a mthod with SVM classification, that predict if a person has covid-19 base on the patients symptoms. SVM classifiers notable had an accuracy of 87% based on the article. From there challenges in adaption of covid-19 was highlighted, alongside a need for ongoing analysis. 
+
+For my 3 academic papers I chose [Decision tree learning through a Predictive Model for Student Academic Performance in Intelligent M-Learning environments](https://www.sciencedirect.com/science/article/pii/S2666920X21000291), [Decision Tree-Based Predictive Models for Academic Achievement Using College Students’ Support Networks ](https://arxiv.org/pdf/2108.13947) and [Using Decision Trees and Random Forest Algorithms to Predict and Determine Factors Contributing to First-Year University Students’ Learning Performance](https://www.mdpi.com/1999-4893/14/11/318). The overall theme regarding the articles was the impact of the classifiers of the decision tree. For one use case economic and demographic factors were used to identify high risk students, which allowed the school to focus on ensuring their success. In another tools such as elearning and its impact was a major factor while another used Decision tree alongside CHAID and cforest algorithms to focus on the gender identification alongside other demographic factors. Overall, I believe whats highlighted was that a diverse understanding of the use case will help in designing a model with the correct classifiers to drive results.
+
+As far as the data used for this assignment Tuned Random Forest performed best with a MAE of 0.01200354	RMSE of 0.02333389 and R^2 of	0.9995702	

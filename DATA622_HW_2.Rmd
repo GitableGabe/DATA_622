@@ -1,0 +1,516 @@
+---
+title: 'DATA 622: PREDICTIVE ANALYTICS HW 2'
+author: "Gabriel Campos"
+date: "Last edited `r format(Sys.time(), '%B %d, %Y')`"
+output:
+  pdf_document:
+    latex_engine: xelatex
+  geometry: left=0.5cm,right=0.5cm,top=1cm,bottom=2cm
+  html_document:
+    df_print: paged
+  html_notebook: default
+urlcolor: blue
+---
+# Library
+
+```{r, message=FALSE, warning=FALSE}
+library(caret)
+library(corrplot)
+library(dplyr)
+library(e1071)
+library(forecast)
+library(ggforce)
+library(ggplot2)
+library(labelled)
+library(Metrics)
+library(mlbench)
+library(ModelMetrics)
+library(pROC)
+library(psych)
+library(RColorBrewer)
+library(readr)
+library(readxl)
+library(randomForest)
+library(rpart)
+library(rpart.plot)
+library(tidymodels)
+library(tidyr)
+library(tidyverse)
+library(tsibble)
+```
+
+
+# Decision Trees Algorithms
+
+## Pre-work
+
+* Read this blog: https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees which shows some of the issues with decision trees
+* Choose a dataset from a source in Assignment #1, or another dataset of your choice.
+* Assignment work
+
+Based on the latest topics presented, choose a dataset of your choice and create a Decision Tree where you can solve a classification problem and predict the outcome of a particular feature or detail of the data used. Switch variables* to generate 2 decision trees and compare the results. Create a random forest and analyze the results. Based on real cases where desicion trees went wrong, and 'the bad & ugly' aspects of decision trees (https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees), how can you change this perception when using the decision tree you created to solve a real problem?
+
+## Deliverable
+
+### Essay (minimum 500 word document)
+
+Write a short essay explaining your analysis, and how you would address the concerns in the blog (listed in pre-work)
+Exploratory Analysis using R or Python (submit code + errors + analysis as notebook or copy/paste to document)
+
+
+**Note:**
+
+1. We are trying to train 2 different decision trees to compare bias and variance - so switch the features used for the first node (split) to force a different decision tree (How did the performance change?)
+2. You will create 3 models: 2 x decision trees (to compare variance) and a random forest
+
+# Data Load
+
+**NOTE: originally attempted with 100k data set but randomforest function would not compute.
+
+```{r, echo=FALSE}
+df_1k<-read.csv("https://raw.githubusercontent.com/GitableGabe/Data624_Data/main/1000%20Sales%20Records.csv")
+```
+
+# EDA
+
+## Initial Exploration
+
+```{r}
+head(df_1k)
+```
+
+
+```{r}
+describe(df_1k)
+```
+
+```{r}
+str(df_1k)
+```
+
+```{r}
+summary(df_1k)
+```
+
+```{r}
+glimpse(df_1k)
+```
+
+```{r}
+look_for(df_1k)
+```
+
+```{r}
+apply(df_1k, 2, function(x) sum(is.na(x)))
+```
+
+
+```{r}
+unique(df_1k$Region)
+```
+
+```{r}
+#unique(df_1k$Country)
+```
+
+```{r}
+length(unique(df_1k$Country))
+```
+
+```{r}
+table(df_1k$Item.Type)
+
+```
+
+```{r}
+table(df_1k$Sales.Channel)
+```
+
+```{r}
+unique(df_1k$Order.Priority)
+```
+
+```{r}
+#select numeric columns 1k
+df_1k_num <- df_1k %>% 
+  keep(is.numeric) 
+
+#stats
+describe(df_1k_num, fast=TRUE) %>% 
+  select(c(-vars,-n))
+```
+
+```{r}
+#distributions
+df_1k_num %>%
+  pivot_longer(cols = 1:6, names_to = "variable", values_to = "value") %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density() +
+    geom_histogram(aes(y = after_stat(density)), bins = 40, alpha = 0.2, fill = "lightblue", color = "darkgreen")
+```
+
+
+From the initial EDA we see the following:
+
+* The data set is 1,000 rows and 14 columns
+* No labels are found in the variables
+* High range among the integers and doubles
+* Variable types include:
+  * 2 integers, 5 doubles and 7 character types
+* 5 regions are noted with 185 countries associated with it
+* Priority is categorized C(Critical), H(High), M(Medium), and L(Low)
+* No variables seem to be missing values
+* Dependencies among the variables are as follows:
+  * $Total.Cost=Units.Sold\times Unit.Cost$
+  * $Total.Revenue-Units.Sold\times Unit.Price$
+  * $Total.Profit-Total.Revenue-Total.Cost$
+  * $Total.Cost$ and $Total.Revenue$ depends on $Units.Sold,Units.Cost \ and \ Unit.Price$
+* Distribution of the data is noted with several skewed variables which will need transformation and normalizing
+
+## Correlation
+
+```{r}
+corr_matrix <- cor(df_1k_num)
+corrplot(corr_matrix, 
+         type = "lower", 
+         order = "hclust", 
+         tl.col = "blue", 
+         addCoef.col = "white", 
+         diag = FALSE, 
+         title = "Corrplot",
+         mar = c(0, 0, 1, 0),
+         col = brewer.pal(10, "RdYlBu"))
+
+```
+
+Looking at the correlation plot we see the following:
+
+* Weak correlation between Unit.Price, Unit.Cost and Units.Sold
+* Mild correlation between Total.Profit, Total.Revenue, Total.Cost and Units.Sold
+* Mild correlation between Unit.Price, Unit.Cost and Total.Profit
+* High correlation between Unit.Price and Unit.Cost
+* High correlation between Total.Profit and Total Revenue
+* High correlation between Total,Cost and Total.Revenue
+
+I suspect multicollinearity but will use and additional method to confirm.
+
+## VIF
+
+```{r, warning=FALSE}
+set.seed(321)
+
+sample_1k_train <- df_1k_num$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+df_train_1k  <- df_1k_num[sample_1k_train, ]
+df_test_1k <- df_1k_num[-sample_1k_train, ]
+
+
+model<- lm(Total.Revenue~., data=df_train_1k )
+
+vif_values<-car::vif(model)
+
+print(vif_values)
+```
+
+The values interpret as:
+* Order.ID has low multicollinearity
+* Units.Sold low multicollinearity
+* Unit.Price and Unit.Cost has high levels of multicollinearity
+* Total.Cost and Total.Profit has moderate levels of multicollinearity.
+
+# Transformation
+
+Only transformation needed are:
+* date values to Month, Day and Year 
+* levels for categorical values.
+* scaling for pre-processing for modelling
+* Attribute selection of relevant data will also be best
+
+```{r}
+df_1k[['Order.Date']] <- as.Date(df_1k[['Order.Date']], "%m/%d/%Y")
+df_1k[['Ship.Date']] <- as.Date(df_1k[['Ship.Date']], "%m/%d/%Y")
+
+df_1k[['Sales.Channel']] <- as.factor(df_1k[['Sales.Channel']])
+
+df_1k[['Order.Priority']] <- as.factor(df_1k[['Order.Priority']])
+
+df_1k[['Item.Type']] <- as.factor(df_1k[['Item.Type']])
+
+df_1k[['Region']] <- as.factor(df_1k[['Region']])
+
+df_1k[['Country']] <- as.factor(df_1k[['Country']])
+
+df_1k[['Order.ID']] <- as.character(df_1k[['Order.ID']])
+
+df_1k_norm<-predict(preProcess(df_1k, method=c("center", "scale")),df_1k)
+
+```
+
+
+```{r}
+df_1k_norm %>% 
+  keep(is.numeric) %>%  
+  describe(fast=TRUE) %>% 
+  select(-c(vars,n))
+
+df_1k_norm %>%
+  select(where(is.numeric)) %>%   # keep numeric columns
+  {list(summary = summary(.),
+        plot = ggplot(tidyr::pivot_longer(., cols = everything()), 
+                      aes(value)) +
+                facet_wrap(~name, scales = "free") +
+                geom_density() +
+                geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                               color="darkgreen", position="identity", bins = 40))
+  }
+```
+
+```{r}
+df_1k_norm <- df_1k_norm %>% 
+  select(-c(Country,Order.ID,)) 
+```
+
+
+# Models
+
+## Regression trees
+
+### Model 1
+
+```{r}
+set.seed(1234)
+
+df1k_norm1 <- df_1k_norm 
+
+#split
+training_1k_samples <- df1k_norm1$Total.Revenue %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train_1k1  <- df1k_norm1[training_1k_samples, ]
+test_1k1 <- df1k_norm1[-training_1k_samples, ]
+
+#train using rpart, cp- complexity, smaller # = more complexity, 
+#method- anova is for regression
+tree_1k1 <- rpart(Total.Revenue ~., data = train_1k1, cp = 0.004,  method = 'anova')
+
+#visualize
+rpart.plot(tree_1k1)
+print(tree_1k1)
+```
+
+**Predictions**
+
+```{r message=FALSE, warning=FALSE, results='hide'}
+predictions <- predict(tree_1k1, newdata = test_1k1) %>% 
+  bind_cols(test_1k1 )
+
+predictions$...1 <- as.numeric(predictions$...1)
+
+```
+
+**Performance**
+
+```{r}
+decision_tree_model <- data.frame(Model = "Decision Tree 1",
+
+MAE = ModelMetrics::mae(predictions$Total.Revenue, predictions$...1),
+#rmse Root Mean Squared Error
+RMSE = ModelMetrics::rmse(predictions$Total.Revenue, predictions$...1),
+#r squared
+R2 = caret::R2(predictions$Total.Revenue, predictions$...1)
+)
+
+decision_tree_model
+```
+
+
+### Model 2
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+set.seed(4321)
+
+df_1k_norm2 <- df_1k_norm %>%
+  select(-c("Unit.Price","Unit.Cost","Total.Cost", "Total.Profit"))
+
+#split
+training_1k_samples2 <- df_1k_norm2$Total.Revenue %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train_1k2  <- df_1k_norm2[training_1k_samples2, ]
+test_1k2 <- df_1k_norm2[-training_1k_samples2, ]
+
+#train using rpart, cp- complexity, smaller # = more complexity, 
+#method- anova is for regression
+tree_1k2 <- rpart(Total.Revenue ~., data = train_1k2, cp = 0.004, method = 'anova')
+
+#visualize
+rpart.plot(tree_1k2)
+print(tree_1k2)
+
+```
+
+**Predictions**
+
+```{r message=FALSE, warning=FALSE, results='hide'}
+predictions2 <- predict(tree_1k2, newdata = test_1k2) %>% 
+  bind_cols(test_1k2)
+
+predictions2$...1 <- as.numeric(predictions2$...1)
+
+```
+
+**Performance**
+
+```{r}
+decision_tree_model2 <- data.frame(Model = "Decision Tree 2",
+#mean absolute error
+MAE = ModelMetrics::mae(predictions2$Total.Revenue, predictions2$...1),
+#rmse Root Mean Squared Error
+RMSE = ModelMetrics::rmse(predictions2$Total.Revenue, predictions2$...1),
+#r squared
+R2 = caret::R2(predictions2$Total.Revenue, predictions2$...1)
+)
+
+decision_tree_model2
+```
+
+## Random Forest Regression Tree
+
+```{r}
+set.seed(222)
+rf <- randomForest::randomForest(formula = Total.Revenue ~ ., 
+                   data = train_1k1, importance=TRUE)
+```
+
+
+```{r}
+rf
+```
+
+
+```{r}
+ImpData <- as.data.frame(importance(rf))
+ImpData$Var.Names <- row.names(ImpData)
+
+ggplot(ImpData, aes(x=Var.Names, y=`%IncMSE`)) +
+  geom_segment( aes(x=Var.Names, xend=Var.Names, y=0, yend=`%IncMSE`), color="lightgreen") +
+  geom_point(aes(size = IncNodePurity),  color="darkgreen", alpha=1) +
+  theme_light() +
+  coord_flip() +
+  theme(
+    legend.position="bottom",
+    panel.grid.major.y = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+
+
+```
+
+```{r}
+ggplot(ImpData, aes(x=Var.Names, y=`%IncMSE`)) +
+  geom_segment( aes(x=Var.Names, xend=Var.Names, y=0, yend=`%IncMSE`), color="lightblue") +
+  geom_point(aes(size = IncNodePurity),  color="darkblue", alpha=1) +
+  theme_light() +
+  coord_flip() +
+  theme(
+    legend.position="bottom",
+    panel.grid.major.y = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+```
+
+
+**Predictions**
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+predictions3 <- predict(rf, newdata = test_1k1) %>% 
+  bind_cols(test_1k1)
+
+predictions3$...1 <- as.numeric(predictions3$...1)
+```
+
+**Performance**
+
+```{r}
+random_forest_model <- data.frame(Model = "Random Forest",
+#mean absolute error
+MAE = ModelMetrics::mae(predictions3$Total.Revenue, predictions3$...1),
+#rmse Root Mean Squared Error
+RMSE = ModelMetrics::rmse(predictions3$Total.Revenue, predictions3$...1),
+#r squared
+R2 = R2(predictions3$Total.Revenue, predictions3$...1)
+)
+
+random_forest_model
+```
+
+
+## Tuned Random Forest Regression Tree
+
+```{r}
+set.seed(333)
+
+train_tuned_rf <- train_1k1 %>% 
+  select(-Total.Revenue)
+
+bestmtry <- tuneRF(train_tuned_rf,train_1k1$Total.Revenue, stepFactor = 2, improve = 0.01,
+                   trace=T, plot= T, doBest=TRUE, importance=TRUE)
+
+bestmtry
+
+#importance(bestmtry)
+
+# Get variable importance from the model fit
+ImpData <- as.data.frame(importance(bestmtry))
+ImpData$Var.Names <- row.names(ImpData)
+```
+
+```{r}
+ggplot(ImpData, aes(x=Var.Names, y=`%IncMSE`)) +
+  geom_segment( aes(x=Var.Names, xend=Var.Names, y=0, yend=`%IncMSE`), color="lightgreen") +
+  geom_point(aes(size = IncNodePurity), color="darkgreen", alpha=1) +
+  theme_light() +
+  coord_flip() +
+  theme(
+    legend.position="bottom",
+    panel.grid.major.y = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+```
+
+
+
+**Predictions**
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+predictions4 <- predict(bestmtry, newdata = test_1k1) %>% 
+  bind_cols(test_1k1)
+
+predictions4$...1 <- as.numeric(predictions4$...1)
+```
+
+**Model Performance**
+
+```{r}
+random_forest_tuned_model <- data.frame(Model = "Tuned Random Forest",
+#mean absolute error
+MAE = ModelMetrics::mae(predictions4$Total.Revenue, predictions4$...1),
+#rmse Root Mean Squared Error
+RMSE = ModelMetrics::rmse(predictions4$Total.Revenue, predictions4$...1),
+#r squared
+R2 = caret::R2(predictions4$Total.Revenue, predictions4$...1)
+)
+
+random_forest_tuned_model
+```
+
+
+## Essay
+
+This assignment is a build-on to HW1, with an implementation of randomrorest algorithm. Originally my goal for the assignment was to incorporate the 100k dataset with 100k observations used for HW1. The initial plan was to use to assess performance and practicality or the randomforest and decision tree, after assessing the best way to transform the data. Afterwards, for my benefit I would compare to my original assignment and learn from the experience. An issue that arose was with the randomforest method and the large data set. The size created to big a computation load and cause the function to cycle with not result. Due to the submission deadline, I chose to utilize the 1k dataset for this assignment as a result. For my own benefit, I will rerun the function on my own time, to get a gauge on time needed for the computation to complete. Understanding the time needed for this method, would be useful if I chose to use randomforest again in the future. 
+In this assignment I also utilized VIF scores to better assess the level of multicollinearity, which in the HW1 was only assessed with a correlation plot. During the EDA stage of the data, a few transformations were identified before moving to the modelling for this data. Categorical data was ranked, and the dates were defined as dates before proceeding. The distribution of the data was shown to be skewed in some case and the correlation plot showed, that numeric values would be best to utilize with my model. There was very little correlation with the categorical or data values and so those attributes were removed. All numerical data was used regardless if they showed multicollinearity which we identified using VIF. Preprocess function was used for scaling. The motivation behind using this function, was to ensure the values would contribute equally to the analysis, which can be impacted if ranges vary more among the attributes. For models 1 & 2 a decision tree was use. For Model 2, highly correlated variables were removed to assess the impact. I expected Model 2 to out perform on all levels, but it only retained a higher R2 value, which means a higher proportion of the variance is explained by the model, however Model 1 had a higher MAE and RMSE indicating better precision and accuracy. 
+Random forest also had similar results, with a higher R2 but also higher RMSE and MAE, indicating a larger proportion of the dependent variable is explained, while technically being lower in accuracy and precision. Tuning random forest gave some improvement in the area of precision and accuracy, RMSE and MAE, while performing the best as indicated by the R2. However, when compared to the decision tree its RMSE and MAE values is slightly higher. I imagine this data and results would differ if a larger dataset was used, and I intend to rerun this work on my own after the assignment it submitted.

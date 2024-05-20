@@ -3,12 +3,12 @@ title: 'DATA 622: Machine Learning and Big Data HW1'
 author: "Gabriel Campos"
 date: "Last edited `r format(Sys.time(), '%B %d, %Y')`"
 output:
-  pdf_document:
-    latex_engine: xelatex
+  html_notebook: default
   geometry: left=0.5cm,right=0.5cm,top=1cm,bottom=2cm
   html_document:
     df_print: paged
-  html_notebook: default
+  pdf_document:
+    latex_engine: xelatex
 urlcolor: blue
 ---
 
@@ -71,6 +71,10 @@ Develop your exploratory analysis of the data and the essay in the following 2 w
 
 ```{r}
 url<-"https://raw.githubusercontent.com/GitableGabe/Data624_Data/main/"
+```
+
+
+```{r}
 df_1k <- read.csv(paste0(url,"1000%20Sales%20Records.csv"))
 df_100k <- read.csv(paste0(url,"100000%20Sales%20Records.csv"))
 ```
