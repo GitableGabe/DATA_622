@@ -137,7 +137,7 @@ df_1k_num <- df_1k %>%
 
 #stats
 describe(df_1k_num, fast=TRUE) %>% 
-  select(c(-vars,-n))
+  dplyr::select(c(-vars,-n))
 ```
 
 ```{r}
