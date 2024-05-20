@@ -3,12 +3,12 @@ title: 'DATA 622: Machine Learning and Big Data: HW4 (Final Project)'
 author: "Gabriel Campos"
 date: "Last edited `r format(Sys.time(), '%B %d, %Y')`"
 output:
-  html_document:
-    df_print: paged
-  geometry: left=0.5cm,right=0.5cm,top=1cm,bottom=2cm
-  html_notebook: default
   pdf_document:
     latex_engine: xelatex
+  geometry: left=0.5cm,right=0.5cm,top=1cm,bottom=2cm
+  html_notebook: default
+  html_document:
+    df_print: paged
 urlcolor: blue
 ---
 
@@ -86,6 +86,11 @@ library(randomForest)
 
 # Overview
 
+Data retrived came from Centers of Disease Control and Prevention website.
+The data selected was the 2018-2022 Underlying Cause of Deaths by Single: Race Categories.
+The queries completed from this site is limited to 75,000 observations.
+In order to limit the data, State was filtered to strictly NYS and data was collected in yearly batches then merged.
+
 ![](Img_CDC_UCD.png)
 ![](Img_CDC_UCD_long.png)
 
@@ -161,13 +166,15 @@ First, we can preview our dataset.
 glimpse(cdc_ucd_df)
 ```
 
-The dataset consists of 5,905 rows and 11 columns. Most of the variables are categorical, except for the "Deaths" column indicating the count for this type of observation. 
+The dataset consists of 12,356 rows and 13 columns. Most of the variables are categorical, except for the "Deaths" column indicating the count for this type of observation. 
 
 We can take also take a look at the summary statistics for each of the numeric variables. 
 
 ```{r}
 describe(cdc_ucd_df)
 ```
+
+Year is notable being calculated due to its formatting, which will need addressing.Deaths, have a noteable average of 38.16 but a standard deviation of 79.76, indicating a large window of fluctuating deaths.
 
 ```{r}
 summary(cdc_ucd_df)
@@ -280,7 +287,7 @@ ggplot(top_10_ca_data, aes(x = reorder(str_wrap(`Cause of death`, width = 23), -
 
 ```
 
-My main concern with the data is the most prominent causes of death in NYC so above I identified the top 10 for 2018-2022. I am actually surprised that COVID-19 is not ranked #1 considering the years my dataset consists of.
+My main concern with the data is the most prominent causes of death in NYC so above I identified the top 10 for 2018-2022, and see if my models will help identify the most prominent causes it expects. I am actually surprised that COVID-19 is not ranked #1 considering the years my dataset consists of.
 
 ```{r}
 # Calculate frequency of each cause of death by race
@@ -353,12 +360,13 @@ ggplot(top_3_causes_o, aes(x = Race, y = Frequency, fill = Cause)) +
 
 ```
 
+I looked into how much, top causes of death may vary by race and gender, and decided in my model, going into that level of granularity may not be needed at the present time. I can however explore looking to this at a future date for my own purposes.
 
 ```{r}
 (unreliable_count <- sum(cdc_ucd_df$`Crude Rate` == "Unreliable", na.rm = TRUE))
 ```
 
-Crude Rate also appears to have to many `Unreliable` values.
+Crude Rate also appears to have to many `Unreliable` values, approximately 6420, therefore I removed the column altogether.
 
 ```{r, echo=FALSE}
 rm(list = ls()[!grepl("^cdc_ucd", ls())])
@@ -393,12 +401,16 @@ cdc_model <- cdc_model %>%
 
 ```
 
+Running predict to normalize the data made the values appear unlikely with negative decimals. For the purposes of this project I will move forward but resolving this for later interpretation may prove difficult.
+
 # Models
 
 ## SVM
 
+SVM is a model that is ideal for high-dimensional data, so I attempted to utilize it for this data set and use of `eps-regression` is based on the fact that the annual data can be considered continous.
 
-```{r}
+
+```{r, warning=FALSE}
 # Set seed for reproducibility
 set.seed(1234)
 # 
@@ -474,7 +486,11 @@ a_svm <- data.frame(Model = "SVM",
 print(a_svm)
 ```
 
+Not suprisingly the model did very poorly. Choosing a dataset with only 1 numeric value was a drastic change from previous data, therefore learning how to best utilize SVM or manipulate the data for accuracy is something I will look further into.
+
 ## Random Forest Regression Tree
+
+Random Forest Regression Tree is an obvious choice considering most of the data is categorical. The only challenge I foresee is creating a clear visual.
 
 ```{r}
 # Calculate frequency of each cause of death
@@ -524,24 +540,8 @@ dev.off()
 
 ```
 
-Because the Tree model was difficult to see I made it into a PNG. However because of there were an excessive amount of variables, most labels are still difficult to view.
+Because the Tree model was difficult to see I made it into a PNG. However because of there were an excessive amount of variables, most labels are still difficult to view.The PNG will be provided with my submission.
 
-```{r}
-library(rpart.plot)
-
-# Abbreviate the labels
-tree_cdc$names <- abbreviate(tree_cdc$names, minlength = 5)
-
-# Open a PNG graphics device with high resolution
-png("tree_cdc_hd.png", width = 2040, height = 1200, res = 300)  # 300 DPI
-
-# Plot the tree using rpart.plot with abbreviated labels and word-wrapping
-rpart.plot(tree_cdc, extra = 101, type = 3, under = TRUE,  faclen = 0, varlen = 0, snip = TRUE)
-
-# Close the graphics device and save the plot as "tree_cdc_hd.png"
-dev.off()
-
-```
 
 ```{r}
 # Open a PNG graphics device with high resolution
@@ -583,320 +583,38 @@ R2 = caret::R2(predictions_tree$Deaths, predictions_tree$...1)
 
 decision_tree_model
 ```
+# Essay
+
+The objective of my project is to utilize recent mortality data to train a model that can potentially predict its impact on specific demographics. The data was sourced from the Center for Disease Control (CDC) website, specifically from the dataset titled “2018-2022 Underlying Cause of Death by Single Race Categories.” This dataset is primarily categorical, presenting a personal challenge since my previous work throughout the semester primarily involved numerical data.
+
+This project aims to identify underlying causes of death that may disproportionately affect different communities. Factors such as social disparity, limited access to healthy foods, excessive access to fast food, limited access to parks and outdoor activities, and availability of sports facilities by region could all be contributing factors. Although this project does not delve into these specific factors, it applies the skills learned this semester to localize these underlying causes of death by county and demographic. Visualizations created for race and gender groupings illustrate the potential of this data to inform stakeholders and decision-makers, with the goal of improving the lives of various regions and communities.
+
+Data collection faced obstacles due to the CDC website’s maximum query output of 75,000 observations. To mitigate this challenge, the data was limited to New York State and collected in annual batches before merging. During my exploratory data analysis (EDA), I prioritized data integrity, assessing for missing values and identifying 225 NA observations. Given their negligible impact on the dataset, these observations were omitted from the models. The numerical data included deaths and population counts, which were not normalized. With an average death toll of 38 and a standard deviation of 79, there was concern about the model's fit. Plotting the distributions confirmed that the death count was right-skewed and not normalized.
+
+All categorical data included both coded and descriptive text formats. For this project, the descriptive text was used to enhance readability. Redundant codes were removed, categories were set as factors, and the year was treated as a date value for preprocessing.
+
+Given that Support Vector Machine (SVM) models perform well with high-dimensional data, I employed this technique for the dataset. Based on guidance from R documentation and Stack Exchange sites, I determined that 'eps-regression' was the optimal parameter for the 'type' argument, considering the continuous nature of the annual data. However, the results were as follows:
+
+| Model          | MAE   | RMSE   | $R^2$ |
+|----------------|-------|--------|-------|
+| SVM            | 0.4065| 1.0890 | 0.2689|
+
+
+The SVM model proved to be a poor fit.
+
+Subsequently, I utilized a random forest model, generating the image tree_cdc_hd.png to better visualize the results. The results were:
+
+| Model          | MAE   | RMSE   | $R^2$ |
+|----------------|-------|--------|-------|
+| Decision Tree 1| 0.4034| 0.8857 | 0.6272|
+
+
+The decision tree model demonstrated a better fit compared to the SVM model.
+
+In this project, I deliberately retained the noted errors as learning opportunities for future endeavors. Firstly, while I believe my data selection was appropriate, I need to further investigate the transformation of numerical values. Specifically, the normalization process via the predict() function resulted in negative decimal values, posing a challenge in accurately predicting future outcomes. Additionally, using the Code definitions for categories in the Random Forest model could have enhanced the model's visualization. However, this introduced interpretation challenges. Moving forward, I intend to continue refining this dataset to address these common interpretative issues, thereby improving the clarity and utility of my models in similar future projects.
+
 
 <!------- Below is for removing excessive space in Rmarkdown | HTML formatting -------->
 
 <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
 
-```{r}
-# # Define a function to map race descriptions to numeric codes
-# race_to_numeric <- function(race) {
-#   race <- tolower(race)  # Convert to lowercase for case insensitivity
-# 
-#   # Mapping races to numeric codes
-#   race_code <- case_when(
-#     grepl("american indian|alaska native", race) ~ 1,
-#     grepl("asian", race) ~ 2,
-#     grepl("black|african american", race) ~ 3,
-#     grepl("native hawaiian|other pacific islander", race) ~ 4,
-#     grepl("white|other", race) ~ 5,
-#     TRUE ~ NA_integer_  # Handle other cases
-#   )
-# 
-#   return(race_code)
-# }
-# 
-# # Add a new column "Race Code Numeric" based on the mapping
-# cdc_ucd_df$Race_Code_Numeric <- sapply(cdc_ucd_df$Race, race_to_numeric)
-# 
-# # Display the updated data frame
-# head(cdc_ucd_df)
-
-```
-
-
-```{r}
-# unique(cdc_ucd_df$`Cause of death`)
-```
-
-```{r}
-# cause_lookup <- c(
-# "Septicaemia, unspecified"=1,
-# "Bronchus or lung, unspecified - Malignant neoplasms"=2,
-# "Breast, unspecified - Malignant neoplasms"=3,
-# "Unspecified diabetes mellitus, without complications"=4,
-# "Atherosclerotic heart disease"=5,
-# "Chronic kidney disease, stage 5"=6,
-# "COVID-19"=7,
-# "Accidental poisoning by and exposure to narcotics and psychodysleptics [hallucinogens], not elsewhere classified"=8,
-# "Poisoning by and exposure to narcotics and psychodysleptics [hallucinogens], not elsewhere classified, undetermined intent"=9,
-# "Colon, unspecified - Malignant neoplasms"=10,
-# "Pancreas, unspecified - Malignant neoplasms"=11,
-# "Cervix uteri, unspecified - Malignant neoplasms"=12,
-# "Endometrium - Malignant neoplasms"=13,
-# "Malignant neoplasm of uterus, part unspecified"=14,
-# "Malignant neoplasm of ovary"=15,
-# "Malignant neoplasm of kidney, except renal pelvis"=16,
-# "Brain, unspecified - Malignant neoplasms"=17,
-# "Malignant neoplasm without specification of site"=18,
-# "Acute myeloid leukaemia - Malignant neoplasms"=19,
-# "Non-insulin-dependent diabetes mellitus, with renal complications"=20,
-# "Unspecified dementia"=21,
-# "Alzheimer disease, unspecified"=22,
-# "Essential (primary) hypertension"=23,
-# "Acute myocardial infarction, unspecified"=24,
-# "Chronic ischaemic heart disease, unspecified"=25,
-# "Pulmonary embolism without mention of acute cor pulmonale"=26,
-# "Other secondary pulmonary hypertension"=27,
-# "Cardiac arrest, unspecified"=28,
-# "Cardiac arrhythmia, unspecified"=29,
-# "Heart failure, unspecified"=30,
-# "Intracerebral haemorrhage, unspecified"=31,
-# "Stroke, not specified as haemorrhage or infarction"=32,
-# "Pneumonia, unspecified"=33,
-# "Chronic obstructive pulmonary disease with acute lower respiratory infection"=34,
-# "Chronic obstructive pulmonary disease, unspecified"=35,
-# "Pneumonitis due to food and vomit"=36,
-# "Respiratory failure, unspecified"=37,
-# "Vascular disorder of intestine, unspecified"=38,
-# "Alcoholic cirrhosis of liver"=39,
-# "Other and unspecified cirrhosis of liver"=40,
-# "Acute renal failure, unspecified"=41,
-# "Urinary tract infection, site not specified"=42,
-# "Other ill-defined and unspecified causes of mortality"=43,
-# "Accidental poisoning by and exposure to other and unspecified drugs, medicaments and biological substances"=44,
-# "Intentional self-harm by hanging, strangulation and suffocation"=45,
-# "Malignant neoplasm of prostate"=46,
-# "Unspecified diabetes mellitus, with renal complications"=47,
-# "Assault by other and unspecified firearm discharge"=48,
-# "Oesophagus, unspecified - Malignant neoplasms"=49,
-# "Malignant neoplasm of rectum"=50,
-# "Liver cell carcinoma - Malignant neoplasms"=51,
-# "Intrahepatic bile duct carcinoma - Malignant neoplasms"=52,
-# "Liver, unspecified - Malignant neoplasms"=53,
-# "Malignant melanoma of skin, unspecified - Malignant neoplasms"=54,
-# "Bladder, unspecified - Malignant neoplasms"=55,
-# "Multiple myeloma - Malignant neoplasms"=56,
-# "Myelodysplastic syndrome, unspecified - Uncertain neoplasms"=57,
-# "Mental and behavioural disorders due to use of alcohol, dependence syndrome"=58,
-# "Motor neuron disease"=59,
-# "Parkinson disease"=60,
-# "Anoxic brain damage, not elsewhere classified"=61,
-# "Hypertensive heart disease without (congestive) heart failure"=62,
-# "Atherosclerotic cardiovascular disease, so described"=63,
-# "Ischaemic cardiomyopathy"=64,
-# "Dilated cardiomyopathy"=65,
-# "Congestive heart failure"=66,
-# "Cardiomegaly"=67,
-# "Peripheral vascular disease, unspecified"=68,
-# "Other interstitial pulmonary diseases with fibrosis"=69,
-# "Gastrointestinal haemorrhage, unspecified"=70,
-# "Intentional self-harm by other and unspecified firearm discharge"=71,
-# "Poisoning by and exposure to other and unspecified drugs, medicaments and biological substances, undetermined intent"=72,
-# "Enterocolitis due to Clostridium difficile"=73,
-# "Chronic viral hepatitis C"=74,
-# "HIV disease resulting in other bacterial infections"=75,
-# "HIV disease resulting in multiple infections"=76,
-# "HIV disease resulting in multiple diseases classified elsewhere"=77,
-# "HIV disease resulting in other specified conditions"=78,
-# "Unspecified human immunodeficiency virus [HIV] disease"=79,
-# "Coronavirus infection, unspecified"=80,
-# "Stomach, unspecified - Malignant neoplasms"=81,
-# "Malignant neoplasm of gallbladder"=82,
-# "Sickle-cell anaemia without crisis"=83,
-# "Non-insulin-dependent diabetes mellitus, without complications"=84,
-# "Unspecified diabetes mellitus, with ketoacidosis"=85,
-# "Other obesity"=86,
-# "Obesity, unspecified"=87,
-# "Hyperlipidaemia, unspecified"=88,
-# "Mental and behavioural disorders due to use of alcohol, harmful use"=89,
-# "Mental and behavioural disorders due to use of alcohol, unspecified mental and behavioural disorder"=90,
-# "Multiple sclerosis"=91,
-# "Hypertensive heart disease with (congestive) heart failure"=92,
-# "Hypertensive renal disease with renal failure"=93,
-# "Endocarditis, valve unspecified"=94,
-# "Cardiovascular disease, unspecified"=95,
-# "Subarachnoid haemorrhage, unspecified"=96,
-# "Intracranial haemorrhage (nontraumatic), unspecified"=97,
-# "Cerebral infarction, unspecified"=98,
-# "Phlebitis and thrombophlebitis of other deep vessels of lower extremities"=99,
-# "Bacterial pneumonia, unspecified"=100,
-# "Lobar pneumonia, unspecified"=101,
-# "Asthma, unspecified"=102,
-# "Interstitial pulmonary disease, unspecified"=103,
-# "Respiratory disorder, unspecified"=104,
-# "Systemic lupus erythematosus with organ or system involvement"=105,
-# "Exposure to uncontrolled fire in building or structure"=106,
-# "Assault by sharp object"=107,
-# "Connective and soft tissue, unspecified - Malignant neoplasms"=108,
-# "Non-Hodgkin lymphoma large cell (diffuse)"=109,
-# "Non-Hodgkin lymphoma, unspecified type"=110,
-# "Leukaemia, unspecified - Malignant neoplasms"=111,
-# "Acidosis"=112,
-# "Acute subendocardial myocardial infarction"=113,
-# "Cardiomyopathy, unspecified"=114,
-# "Sequelae of other and unspecified cerebrovascular diseases"=115,
-# "Influenza with pneumonia, virus not identified"=116,
-# "Emphysema, unspecified"=117,
-# "Adult respiratory distress syndrome"=118,
-# "Extreme immaturity"=119,
-# "Unspecified fall"=120,
-# "Intentional self-poisoning by and exposure to other and unspecified drugs, medicaments and biological substances"=121,
-# "Intentional self-harm by jumping from a high place"=122,
-# "HIV disease resulting in other viral infections"=123,
-# "HIV disease resulting in other infectious and parasitic diseases"=124,
-# "Larynx, unspecified - Malignant neoplasms"=125,
-# "Other and unspecified T-cell lymphomas - Malignant neoplasms"=126,
-# "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances, unspecified mental and behavioural disorder"=127,
-# "Epilepsy, unspecified"=128,
-# "Hypertensive heart and renal disease with renal failure"=129,
-# "Hypertensive heart and renal disease with both (congestive) heart failure and renal failure"=130,
-# "Atrial fibrillation and flutter"=131,
-# "Dissection of aorta [any part]"=132,
-# "Other and unspecified intestinal obstruction"=133,
-# "Acute pancreatitis, unspecified"=134,
-# "Unspecified renal failure"=135,
-# "Congenital malformation of heart, unspecified"=136,
-# "Pedestrian injured in traffic accident involving other and unspecified motor vehicles"=137,
-# "Person injured in unspecified motor-vehicle accident, traffic"=138,
-# "Exposure to excessive natural cold"=139,
-# "Accidental poisoning by and exposure to antiepileptic, sedative-hypnotic, antiparkinsonism and psychotropic drugs, not elsewhere classified"=140,
-# "Intentional self-harm by drowning and submersion"=141,
-# "Assault by unspecified means"=142,
-# "Tongue, unspecified - Malignant neoplasms"=143,
-# "Malignant neoplasm of rectosigmoid junction"=144,
-# "Secondary malignant neoplasm of liver - Malignant neoplasms"=145,
-# "Acute lymphoblastic leukaemia - Malignant neoplasms"=146,
-# "Unspecified diabetes mellitus, with peripheral circulatory complications"=147,
-# "Unspecified diabetes mellitus, with multiple complications"=148,
-# "Mental and behavioural disorders due to use of opioids, unspecified mental and behavioural disorder"=149,
-# "Mental and behavioural disorders due to use of cocaine, unspecified mental and behavioural disorder"=150,
-# "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances, harmful use"=151,
-# "Sequelae of stroke, not specified as haemorrhage or infarction"=152,
-# "Generalized and unspecified atherosclerosis"=153,
-# "Chronic obstructive pulmonary disease with acute exacerbation, unspecified"=154,
-# "Alcoholic hepatic failure"=155,
-# "Hepatic failure, unspecified"=156,
-# "Liver disease, unspecified"=157,
-# "Fall on and from stairs and steps"=158,
-# "Other fall on same level"=159,
-# "Drowning and submersion while in natural water"=160,
-# "Accidental poisoning by and exposure to alcohol"=161,
-# "Intentional self-harm by jumping or lying before moving object"=162,
-# "Unspecified event, undetermined intent"=163,
-# "Acute respiratory failure"=164,
-# "Other ill-defined heart diseases"=165,
-# "Respiratory arrest"=166,
-# "Huntington disease"=167,
-# "Intentional self-harm by rifle, shotgun and larger firearm discharge"=168,
-# "Vulva, unspecified - Malignant neoplasms"=169,
-# "Malignant neoplasms of independent (primary) multiple sites"=170,
-# "Pure hypercholesterolaemia"=171,
-# "Metabolic disorder, unspecified"=172,
-# "Circumscribed brain atrophy"=173,
-# "Status epilepticus, unspecified"=174,
-# "Encephalopathy, unspecified"=175,
-# "Acute ischaemic heart disease, unspecified"=176,
-# "Aortic (valve) stenosis"=177,
-# "Other specified conduction disorders"=178,
-# "Sudden cardiac death, so described"=179,
-# "Other specified cerebrovascular diseases"=180,
-# "Chronic respiratory failure"=181,
-# "Perforation of intestine (nontraumatic)"=182,
-# "Fatty (change of) liver, not elsewhere classified"=183,
-# "Chronic renal failure, unspecified"=184,
-# "Down syndrome, unspecified"=185,
-# "Accidental suffocation and strangulation in bed"=186,
-# "Tonsil, unspecified - Malignant neoplasms"=187,
-# "Oropharynx, unspecified - Malignant neoplasms"=188,
-# "Cardia - Malignant neoplasms"=189,
-# "Secondary malignant neoplasm of other specified sites - Malignant neoplasms"=190,
-# "Non-Hodgkin lymphoma small cleaved cell (diffuse)"=191,
-# "Chronic lymphocytic leukaemia - Malignant neoplasms"=192,
-# "Insulin-dependent diabetes mellitus, without complications"=193,
-# "Vascular dementia, unspecified"=194,
-# "Other specified degenerative diseases of nervous system"=195,
-# "Infantile cerebral palsy, unspecified"=196,
-# "Acute and subacute infective endocarditis"=197,
-# "Ventricular fibrillation and flutter"=198,
-# "Heart disease, unspecified"=199,
-# "Subdural haemorrhage (acute)(nontraumatic)"=200,
-# "Alcoholic hepatitis"=201,
-# "Alcoholic liver disease, unspecified"=202,
-# "Osteomyelitis, unspecified"=203,
-# "Driver injured in collision with other and unspecified motor vehicles in traffic accident"=204,
-# "Person injured in collision between other specified motor vehicles (traffic)"=205,
-# "Exposure to unspecified factor causing other and unspecified injury"=206,
-# "Intentional self-poisoning by and exposure to other gases and vapours"=207,
-# "Intentional self-harm by sharp object"=208,
-# "Sequelae of other accidents"=209,
-# "Mental and behavioural disorders due to use of tobacco, unspecified mental and behavioural disorder"=210,
-# "Bacterial infection, unspecified"=211,
-# "Ill-defined sites within the digestive system - Malignant neoplasms"=212,
-# "Malignant neoplasm of thyroid gland"=213,
-# "Leiomyoma of uterus, unspecified - Benign neoplasms"=214,
-# "Sarcoidosis, unspecified"=215,
-# "Status asthmaticus"=216,
-# "Other disorders of lung"=217,
-# "Sudden infant death syndrome - SIDS"=218,
-# "Inhalation and ingestion of other objects causing obstruction of respiratory tract"=219,
-# "Cholangitis"=220,
-# "Other forms of systemic sclerosis"=221,
-# "Nasopharynx, unspecified - Malignant neoplasms"=222,
-# "Hyperkalaemia"=223,
-# "Cerebrovascular disease, unspecified"=224,
-# "Decubitus ulcer and pressure area, unspecified"=225,
-# "Hyperplasia of prostate"=226,
-# "Neonatal cardiac dysrhythmia"=227,
-# "Other and unspecified convulsions"=228,
-# "Pedestrian injured in collision with car, pick-up truck or van, traffic accident"=229,
-# "Unspecified whether traffic or nontraffic accident"=230,
-# "Legal intervention involving firearm discharge"=231,
-# "Bone and articular cartilage, unspecified - Malignant neoplasms"=232,
-# "B-cell lymphoma, unspecified - Malignant neoplasms"=233,
-# "Other viral pneumonia"=234,
-# "Other fall from one level to another"=235,
-# "Other lack of expected normal physiological development"=236,
-# "Staphylococcal infection, unspecified"=237,
-# "Gastroenteritis and colitis of unspecified origin"=238,
-# "Appendix - Malignant neoplasms"=239,
-# "Fallopian tube - Malignant neoplasms"=240,
-# "Cerebral atherosclerosis"=241,
-# "Senile degeneration of brain, not elsewhere classified"=242,
-# "Muscular dystrophy"=243,
-# "Myocarditis, unspecified"=244,
-# "Phlebitis and thrombophlebitis of lower extremities, unspecified"=245,
-# "Motorcycle rider injured in collision with car, pick-up truck or van, driver injured in traffic accident"=246,
-# "Car occupant injured in collision with fixed or stationary object, driver injured in traffic accident"=247,
-# "Accidental poisoning by and exposure to other gases and vapours"=248,
-# "Sequelae of motor-vehicle accident"=249,
-# "Anus, unspecified - Malignant neoplasms"=250,
-# "Intentional self-poisoning by and exposure to antiepileptic, sedative-hypnotic, antiparkinsonism and psychotropic drugs, not elsewhere classified"=251,
-# "Intentional self-harm by handgun discharge"=252,
-# "Acute hepatitis B without delta-agent and without hepatic coma"=253,
-# "Testis, unspecified - Malignant neoplasms"=254,
-# "Inhalation and ingestion of food causing obstruction of respiratory tract"=255,
-# "Other hypertrophic cardiomyopathy"=256,
-# "Brain, unspecified - Uncertain neoplasms"=257,
-# "Pharynx, unspecified - Malignant neoplasms"=258,
-# "Malignant neoplasm of skin, unspecified - Malignant neoplasms"=259,
-# "Mental and behavioural disorders due to use of cocaine, harmful use"=260,
-# "Pulmonary heart disease, unspecified"=261,
-# "Alcoholic cardiomyopathy"=262,
-# "Abdominal aortic aneurysm, ruptured"=263,
-# "Duodenal ulcer, chronic or unspecified with perforation"=264,
-# "Disorder of kidney and ureter, unspecified"=265,
-# "Other specified general symptoms and signs"=266,
-# "Motorcycle rider injured in collision with fixed or stationary object, driver injured in traffic accident"=267,
-# "Alcoholic fatty liver"=268,
-# "NA"=269
-# )
-```
-
-```{r}
-# cdc_ucd_df$Cause_numeric <- cause_lookup[cdc_ucd_df$`Cause of death`]
-```
-
-```{r}
-# summary(cdc_ucd_df)
-```
