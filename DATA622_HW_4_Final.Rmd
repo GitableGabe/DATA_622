@@ -614,6 +614,16 @@ The decision tree model demonstrated a better fit compared to the SVM model.
 In this project, I deliberately retained the noted errors as learning opportunities for future endeavors. Firstly, while I believe my data selection was appropriate, I need to further investigate the transformation of numerical values. Specifically, the normalization process via the predict() function resulted in negative decimal values, posing a challenge in accurately predicting future outcomes. Additionally, using the Code definitions for categories in the Random Forest model could have enhanced the model's visualization. However, this introduced interpretation challenges. Moving forward, I intend to continue refining this dataset to address these common interpretative issues, thereby improving the clarity and utility of my models in similar future projects.
 
 
+![](tree_cdc_hd.png)
+
+```{r}
+
+write.csv(predictions_SVM, file = "predictions_SVM.csv", row.names = TRUE)
+
+write.csv(predictions_tree, file = "predictions_tree.csv", row.names = TRUE)
+```
+
+
 <!------- Below is for removing excessive space in Rmarkdown | HTML formatting -------->
 
 <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>

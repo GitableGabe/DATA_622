@@ -1,0 +1,835 @@
+"","...1","Year","County","Gender","Race","Cause of death","Deaths"
+"1",-0.131709874046979,2018-01-01,"Albany County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",-0.177476688088267
+"2",-0.131709874046979,2018-01-01,"Albany County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.265238886060533
+"3",-0.131709874046979,2018-01-01,"Albany County, NY","Male","White","Atherosclerotic heart disease",1.11388136778936
+"4",-0.131709874046979,2018-01-01,"Allegany County, NY","Female","White","Atherosclerotic heart disease",-0.340463627179617
+"5",-0.131709874046979,2018-01-01,"Allegany County, NY","Male","White","Atherosclerotic heart disease",-0.327926170326437
+"6",0.00693544681148407,2018-01-01,"Bronx County, NY","Female","Black or African American","Stroke, not specified as haemorrhage or infarction",-0.177476688088267
+"7",1.61175553329496,2018-01-01,"Bronx County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",0.838057317019378
+"8",1.61175553329496,2018-01-01,"Bronx County, NY","Female","White","Unspecified dementia",1.05119408352345
+"9",0.634106982034455,2018-01-01,"Bronx County, NY","Female","White","Alzheimer disease, unspecified",1.02611916981709
+"10",3.03937079397786,2018-01-01,"Bronx County, NY","Female","White","Atherosclerotic heart disease",4.41123252017591
+"11",0.00693544681148407,2018-01-01,"Bronx County, NY","Male","Black or African American","Alzheimer disease, unspecified",-0.252701429207352
+"12",6.17378999611891,2018-01-01,"Bronx County, NY","Male","Black or African American","Atherosclerotic heart disease",1.31448067744025
+"13",0.00693544681148407,2018-01-01,"Bronx County, NY","Male","Black or African American","Stroke, not specified as haemorrhage or infarction",-0.22762651550099
+"14",0.634106982034455,2018-01-01,"Bronx County, NY","Male","White","Alzheimer disease, unspecified",0.0356600784158067
+"15",0.634106982034455,2018-01-01,"Bronx County, NY","Male","White","Acute myocardial infarction, unspecified",0.612383093662124
+"16",3.03937079397786,2018-01-01,"Bronx County, NY","Male","White","Atherosclerotic heart disease",3.59629782471915
+"17",0.634106982034455,2018-01-01,"Bronx County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.127326860675544
+"18",-0.131709874046979,2018-01-01,"Broome County, NY","Female","White","Alzheimer disease, unspecified",0.0607349921221683
+"19",-0.131709874046979,2018-01-01,"Broome County, NY","Female","White","Atherosclerotic heart disease",0.273871758626242
+"20",-0.131709874046979,2018-01-01,"Broome County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",0.24879684491988
+"21",-0.131709874046979,2018-01-01,"Broome County, NY","Male","White","Atherosclerotic heart disease",0.311484129185784
+"22",-0.131709874046979,2018-01-01,"Broome County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.315388713473256
+"23",-0.131709874046979,2018-01-01,"Cattaraugus County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",-0.353001084032798
+"24",-0.131709874046979,2018-01-01,"Cattaraugus County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.240163972354171
+"25",-0.131709874046979,2018-01-01,"Cattaraugus County, NY","Male","White","Unspecified dementia",-0.353001084032798
+"26",-0.131709874046979,2018-01-01,"Cattaraugus County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.215089058647809
+"27",-0.131709874046979,2018-01-01,"Cayuga County, NY","Female","White","Alzheimer disease, unspecified",-0.290313799766894
+"28",-0.131709874046979,2018-01-01,"Cayuga County, NY","Female","White","Atherosclerotic heart disease",-0.0646395764096397
+"29",-0.131709874046979,2018-01-01,"Cayuga County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.277776342913713
+"30",-0.131709874046979,2018-01-01,"Chautauqua County, NY","Female","White","Atherosclerotic heart disease",0.0983473626817107
+"31",-0.131709874046979,2018-01-01,"Chautauqua County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.0144897489969165
+"32",-0.131709874046979,2018-01-01,"Chemung County, NY","Female","White","Acute myocardial infarction, unspecified",-0.22762651550099
+"33",-0.131709874046979,2018-01-01,"Chemung County, NY","Female","White","Atherosclerotic heart disease",0.0105851647094451
+"34",-0.131709874046979,2018-01-01,"Chemung County, NY","Male","White","Unspecified dementia",-0.177476688088267
+"35",-0.131709874046979,2018-01-01,"Chenango County, NY","Female","White","Alzheimer disease, unspecified",-0.340463627179617
+"36",-0.131709874046979,2018-01-01,"Chenango County, NY","Male","White","Atherosclerotic heart disease",-0.139864317528725
+"37",-0.131709874046979,2018-01-01,"Columbia County, NY","Female","White","Unspecified dementia",-0.202551601794629
+"38",-0.131709874046979,2018-01-01,"Columbia County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.302851256620075
+"39",-0.131709874046979,2018-01-01,"Columbia County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.240163972354171
+"40",-0.131709874046979,2018-01-01,"Columbia County, NY","Male","White","Acute myocardial infarction, unspecified",-0.327926170326437
+"41",-0.131709874046979,2018-01-01,"Cortland County, NY","Female","White","Unspecified dementia",-0.102251946969182
+"42",-0.131709874046979,2018-01-01,"Cortland County, NY","Female","White","Acute myocardial infarction, unspecified",-0.340463627179617
+"43",-0.131709874046979,2018-01-01,"Cortland County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.353001084032798
+"44",-0.131709874046979,2018-01-01,"Delaware County, NY","Male","White","Atherosclerotic heart disease",-0.164939231235086
+"45",-0.131709874046979,2018-01-01,"Dutchess County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",0.361633956598507
+"46",-0.131709874046979,2018-01-01,"Dutchess County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",-0.327926170326437
+"47",-0.131709874046979,2018-01-01,"Dutchess County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.0897144901160013
+"48",0.244222367419395,2018-01-01,"Erie County, NY","Female","Black or African American","Atherosclerotic heart disease",-0.114789403822363
+"49",1.61175553329496,2018-01-01,"Erie County, NY","Female","White","Unspecified dementia",5.71512803290671
+"50",0.634106982034455,2018-01-01,"Erie County, NY","Female","White","Acute myocardial infarction, unspecified",1.67806692618249
+"51",1.61175553329496,2018-01-01,"Erie County, NY","Female","White","Atherosclerotic cardiovascular disease, so described",0.411783784011231
+"52",0.00693544681148407,2018-01-01,"Erie County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",-0.0771770332628205
+"53",-0.131709874046979,2018-01-01,"Essex County, NY","Female","White","Unspecified dementia",-0.302851256620075
+"54",-0.131709874046979,2018-01-01,"Essex County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.302851256620075
+"55",-0.131709874046979,2018-01-01,"Franklin County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.353001084032798
+"56",-0.131709874046979,2018-01-01,"Franklin County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.327926170326437
+"57",-0.131709874046979,2018-01-01,"Fulton County, NY","Female","White","Acute myocardial infarction, unspecified",-0.353001084032798
+"58",-0.131709874046979,2018-01-01,"Fulton County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.252701429207352
+"59",-0.131709874046979,2018-01-01,"Fulton County, NY","Male","White","Acute myocardial infarction, unspecified",-0.315388713473256
+"60",-0.131709874046979,2018-01-01,"Fulton County, NY","Male","White","Atherosclerotic heart disease",-0.0521021195564589
+"61",-0.131709874046979,2018-01-01,"Genesee County, NY","Female","White","Acute myocardial infarction, unspecified",-0.277776342913713
+"62",-0.131709874046979,2018-01-01,"Genesee County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.22762651550099
+"63",-0.131709874046979,2018-01-01,"Greene County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.340463627179617
+"64",-0.131709874046979,2018-01-01,"Herkimer County, NY","Male","White","Unspecified dementia",-0.315388713473256
+"65",-0.131709874046979,2018-01-01,"Jefferson County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.215089058647809
+"66",-0.131709874046979,2018-01-01,"Jefferson County, NY","Female","White","Unspecified dementia",-0.102251946969182
+"67",-0.131709874046979,2018-01-01,"Jefferson County, NY","Female","White","Acute myocardial infarction, unspecified",-0.102251946969182
+"68",-0.131709874046979,2018-01-01,"Jefferson County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.0395646627032781
+"69",-0.131709874046979,2018-01-01,"Jefferson County, NY","Male","White","Unspecified dementia",-0.327926170326437
+"70",0.00693544681148407,2018-01-01,"Kings County, NY","Female","Asian","Atherosclerotic cardiovascular disease, so described",-0.302851256620075
+"71",0.00693544681148407,2018-01-01,"Kings County, NY","Female","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",0.737757662193931
+"72",1.61175553329496,2018-01-01,"Kings County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",1.72821675359521
+"73",0.00693544681148407,2018-01-01,"Kings County, NY","Male","Asian","Chronic obstructive pulmonary disease, unspecified",-0.302851256620075
+"74",0.00693544681148407,2018-01-01,"Kings County, NY","Male","Black or African American","Unspecified dementia",-0.0144897489969165
+"75",0.634106982034455,2018-01-01,"Kings County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",0.737757662193931
+"76",1.61175553329496,2018-01-01,"Kings County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",2.07926554548428
+"77",-0.131709874046979,2018-01-01,"Livingston County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.22762651550099
+"78",-0.131709874046979,2018-01-01,"Livingston County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.252701429207352
+"79",-0.131709874046979,2018-01-01,"Madison County, NY","Female","White","Alzheimer disease, unspecified",-0.327926170326437
+"80",-0.131709874046979,2018-01-01,"Madison County, NY","Female","White","Atherosclerotic heart disease",-0.290313799766894
+"81",-0.131709874046979,2018-01-01,"Madison County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.164939231235086
+"82",-0.0375062742646962,2018-01-01,"Monroe County, NY","Female","Black or African American","Atherosclerotic heart disease",-0.353001084032798
+"83",0.389216361675506,2018-01-01,"Monroe County, NY","Female","White","Alzheimer disease, unspecified",0.838057317019378
+"84",0.389216361675506,2018-01-01,"Monroe County, NY","Female","White","Acute myocardial infarction, unspecified",0.900744601285282
+"85",-0.0375062742646962,2018-01-01,"Monroe County, NY","Male","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.152401774381905
+"86",-0.0375062742646962,2018-01-01,"Monroe County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",-0.22762651550099
+"87",-0.0375062742646962,2018-01-01,"Monroe County, NY","Male","Black or African American","Stroke, not specified as haemorrhage or infarction",-0.340463627179617
+"88",0.389216361675506,2018-01-01,"Monroe County, NY","Male","White","Unspecified dementia",1.90374114953975
+"89",0.389216361675506,2018-01-01,"Monroe County, NY","Male","White","Acute myocardial infarction, unspecified",1.46493015967842
+"90",0.389216361675506,2018-01-01,"Monroe County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",0.963431885551186
+"91",1.1288718053312,2018-01-01,"Monroe County, NY","Male","White","Atherosclerotic heart disease",1.23925593632116
+"92",-0.131709874046979,2018-01-01,"Montgomery County, NY","Female","White","Atherosclerotic heart disease",-0.202551601794629
+"93",0.00693544681148407,2018-01-01,"Nassau County, NY","Female","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.215089058647809
+"94",0.00693544681148407,2018-01-01,"Nassau County, NY","Female","Black or African American","Acute myocardial infarction, unspecified",-0.265238886060533
+"95",0.634106982034455,2018-01-01,"Nassau County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",0.386708870304869
+"96",0.244222367419395,2018-01-01,"Nassau County, NY","Male","Asian","Atherosclerotic heart disease",0.0983473626817107
+"97",0.00693544681148407,2018-01-01,"Nassau County, NY","Male","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.177476688088267
+"98",0.00693544681148407,2018-01-01,"Nassau County, NY","Male","Black or African American","Acute myocardial infarction, unspecified",-0.290313799766894
+"99",1.61175553329496,2018-01-01,"Nassau County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",2.01657826121837
+"100",0.634106982034455,2018-01-01,"Nassau County, NY","Male","White","Acute myocardial infarction, unspecified",1.30194322058707
+"101",-0.0375062742646962,2018-01-01,"New York County, NY","Female","Asian","Pancreas, unspecified - Malignant neoplasms",-0.327926170326437
+"102",-0.0375062742646962,2018-01-01,"New York County, NY","Female","Black or African American","Stroke, not specified as haemorrhage or infarction",-0.277776342913713
+"103",0.389216361675506,2018-01-01,"New York County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",1.50254253023796
+"104",-0.0375062742646962,2018-01-01,"New York County, NY","Male","Asian","Unspecified dementia",-0.340463627179617
+"105",0.389216361675506,2018-01-01,"New York County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",0.850594773872559
+"106",0.389216361675506,2018-01-01,"New York County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.173572103800795
+"107",-0.131709874046979,2018-01-01,"Niagara County, NY","Male","White","Acute myocardial infarction, unspecified",0.273871758626242
+"108",-0.131709874046979,2018-01-01,"Niagara County, NY","Male","White","Atherosclerotic heart disease",0.499545981983496
+"109",-0.131709874046979,2018-01-01,"Niagara County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.00195229214373572
+"110",0.389216361675506,2018-01-01,"Oneida County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",-0.290313799766894
+"111",0.389216361675506,2018-01-01,"Oneida County, NY","Female","White","Acute myocardial infarction, unspecified",0.0732724489753491
+"112",0.389216361675506,2018-01-01,"Oneida County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",0.0732724489753491
+"113",0.389216361675506,2018-01-01,"Oneida County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.315388713473256
+"114",0.389216361675506,2018-01-01,"Onondaga County, NY","Female","White","Alzheimer disease, unspecified",0.487008525130316
+"115",0.389216361675506,2018-01-01,"Onondaga County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",0.0858099058285299
+"116",-0.0375062742646962,2018-01-01,"Onondaga County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",-0.340463627179617
+"117",-0.131709874046979,2018-01-01,"Ontario County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.0144897489969165
+"118",-0.131709874046979,2018-01-01,"Ontario County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.327926170326437
+"119",-0.131709874046979,2018-01-01,"Ontario County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.0771770332628205
+"120",-0.131709874046979,2018-01-01,"Ontario County, NY","Male","White","Atherosclerotic heart disease",0.0607349921221683
+"121",0.389216361675506,2018-01-01,"Orange County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.164939231235086
+"122",0.389216361675506,2018-01-01,"Orange County, NY","Male","White","Alzheimer disease, unspecified",-0.0897144901160013
+"123",-0.131709874046979,2018-01-01,"Orleans County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.340463627179617
+"124",-0.131709874046979,2018-01-01,"Oswego County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",0.0858099058285299
+"125",-0.131709874046979,2018-01-01,"Oswego County, NY","Female","White","Unspecified dementia",0.148497190094434
+"126",-0.131709874046979,2018-01-01,"Putnam County, NY","Female","White","Atherosclerotic heart disease",0.161034646947615
+"127",-0.131709874046979,2018-01-01,"Putnam County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.290313799766894
+"128",0.00693544681148407,2018-01-01,"Queens County, NY","Female","Asian","Unspecified dementia",-0.152401774381905
+"129",0.00693544681148407,2018-01-01,"Queens County, NY","Female","Asian","Alzheimer disease, unspecified",-0.202551601794629
+"130",0.00693544681148407,2018-01-01,"Queens County, NY","Female","Asian","Acute myocardial infarction, unspecified",-0.190014144941448
+"131",0.00693544681148407,2018-01-01,"Queens County, NY","Female","Asian","Chronic obstructive pulmonary disease, unspecified",-0.315388713473256
+"132",0.00693544681148407,2018-01-01,"Queens County, NY","Female","Black or African American","Atherosclerotic cardiovascular disease, so described",0.286409215479423
+"133",0.00693544681148407,2018-01-01,"Queens County, NY","Female","Black or African American","Stroke, not specified as haemorrhage or infarction",-0.22762651550099
+"134",0.634106982034455,2018-01-01,"Queens County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",0.39924632715805
+"135",0.00693544681148407,2018-01-01,"Queens County, NY","Male","Asian","Unspecified dementia",-0.240163972354171
+"136",0.00693544681148407,2018-01-01,"Queens County, NY","Male","Asian","Atherosclerotic cardiovascular disease, so described",0.123422276388072
+"137",0.00693544681148407,2018-01-01,"Queens County, NY","Male","Asian","Stroke, not specified as haemorrhage or infarction",-0.265238886060533
+"138",0.00693544681148407,2018-01-01,"Queens County, NY","Male","Black or African American","Acute myocardial infarction, unspecified",0.261334301773061
+"139",6.17378999611891,2018-01-01,"Queens County, NY","Male","Black or African American","Atherosclerotic heart disease",2.83151295667512
+"140",0.634106982034455,2018-01-01,"Queens County, NY","Male","White","Acute myocardial infarction, unspecified",1.02611916981709
+"141",0.634106982034455,2018-01-01,"Queens County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.637458007368485
+"142",-0.131709874046979,2018-01-01,"Rensselaer County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",-0.353001084032798
+"143",-0.131709874046979,2018-01-01,"Rensselaer County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.0270272058500973
+"144",-0.131709874046979,2018-01-01,"Rensselaer County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.0144897489969165
+"145",-0.131709874046979,2018-01-01,"Rensselaer County, NY","Male","White","Acute myocardial infarction, unspecified",-0.215089058647809
+"146",0.389216361675506,2018-01-01,"Richmond County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",-0.114789403822363
+"147",0.389216361675506,2018-01-01,"Richmond County, NY","Male","White","Unspecified dementia",-0.240163972354171
+"148",-0.131709874046979,2018-01-01,"Rockland County, NY","Female","Black or African American","Atherosclerotic heart disease",-0.353001084032798
+"149",-0.131709874046979,2018-01-01,"Rockland County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",0.211184474360338
+"150",-0.131709874046979,2018-01-01,"Rockland County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",0.0607349921221683
+"151",-0.131709874046979,2018-01-01,"Rockland County, NY","Male","Black or African American","Atherosclerotic heart disease",-0.252701429207352
+"152",-0.131709874046979,2018-01-01,"Saratoga County, NY","Female","White","Acute myocardial infarction, unspecified",-0.164939231235086
+"153",-0.131709874046979,2018-01-01,"Saratoga County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.315388713473256
+"154",-0.131709874046979,2018-01-01,"Saratoga County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.353001084032798
+"155",-0.131709874046979,2018-01-01,"Schenectady County, NY","Female","White","Unspecified dementia",0.161034646947615
+"156",-0.131709874046979,2018-01-01,"Schenectady County, NY","Female","White","Acute myocardial infarction, unspecified",-0.302851256620075
+"157",-0.131709874046979,2018-01-01,"Schenectady County, NY","Female","White","Atherosclerotic heart disease",0.24879684491988
+"158",-0.131709874046979,2018-01-01,"Schoharie County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.315388713473256
+"159",-0.131709874046979,2018-01-01,"Seneca County, NY","Male","White","Acute myocardial infarction, unspecified",-0.315388713473256
+"160",0.244222367419395,2018-01-01,"Suffolk County, NY","Female","Asian","Atherosclerotic heart disease",-0.340463627179617
+"161",0.00693544681148407,2018-01-01,"Suffolk County, NY","Female","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.302851256620075
+"162",0.634106982034455,2018-01-01,"Suffolk County, NY","Female","White","Alzheimer disease, unspecified",1.33955559114661
+"163",1.61175553329496,2018-01-01,"Suffolk County, NY","Female","White","Atherosclerotic cardiovascular disease, so described",0.24879684491988
+"164",10.6996626646784,2018-01-01,"Suffolk County, NY","Female","White","Atherosclerotic heart disease",9.16292866753143
+"165",0.00693544681148407,2018-01-01,"Suffolk County, NY","Male","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.252701429207352
+"166",0.634106982034455,2018-01-01,"Suffolk County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",0.0983473626817107
+"167",-0.131709874046979,2018-01-01,"Sullivan County, NY","Female","White","Acute myocardial infarction, unspecified",-0.277776342913713
+"168",-0.131709874046979,2018-01-01,"Sullivan County, NY","Male","White","Acute myocardial infarction, unspecified",-0.202551601794629
+"169",-0.131709874046979,2018-01-01,"Tioga County, NY","Male","White","Unspecified dementia",-0.353001084032798
+"170",-0.131709874046979,2018-01-01,"Tioga County, NY","Male","White","Acute myocardial infarction, unspecified",-0.353001084032798
+"171",-0.131709874046979,2018-01-01,"Tioga County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.353001084032798
+"172",-0.131709874046979,2018-01-01,"Tompkins County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.290313799766894
+"173",-0.131709874046979,2018-01-01,"Tompkins County, NY","Male","White","Unspecified dementia",-0.327926170326437
+"174",-0.131709874046979,2018-01-01,"Ulster County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",-0.353001084032798
+"175",-0.131709874046979,2018-01-01,"Ulster County, NY","Male","White","Acute myocardial infarction, unspecified",-0.202551601794629
+"176",-0.131709874046979,2018-01-01,"Ulster County, NY","Male","White","Atherosclerotic heart disease",0.135959733241253
+"177",-0.131709874046979,2018-01-01,"Ulster County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.0521021195564589
+"178",-0.131709874046979,2018-01-01,"Warren County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.252701429207352
+"179",-0.131709874046979,2018-01-01,"Warren County, NY","Male","White","Acute myocardial infarction, unspecified",-0.327926170326437
+"180",-0.131709874046979,2018-01-01,"Washington County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.290313799766894
+"181",-0.131709874046979,2018-01-01,"Washington County, NY","Male","White","Unspecified dementia",-0.353001084032798
+"182",-0.131709874046979,2018-01-01,"Wayne County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.190014144941448
+"183",-0.131709874046979,2018-01-01,"Wayne County, NY","Male","White","Unspecified dementia",-0.190014144941448
+"184",0.00693544681148407,2018-01-01,"Westchester County, NY","Female","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.315388713473256
+"185",0.00693544681148407,2018-01-01,"Westchester County, NY","Female","Black or African American","Unspecified dementia",-0.114789403822363
+"186",0.00693544681148407,2018-01-01,"Westchester County, NY","Female","Black or African American","Acute myocardial infarction, unspecified",-0.240163972354171
+"187",0.00693544681148407,2018-01-01,"Westchester County, NY","Female","Black or African American","Atherosclerotic cardiovascular disease, so described",-0.177476688088267
+"188",0.00693544681148407,2018-01-01,"Westchester County, NY","Female","Black or African American","Stroke, not specified as haemorrhage or infarction",-0.302851256620075
+"189",1.61175553329496,2018-01-01,"Westchester County, NY","Female","White","Unspecified dementia",2.43031433737334
+"190",3.03937079397786,2018-01-01,"Westchester County, NY","Female","White","Atherosclerotic heart disease",4.04764627143366
+"191",0.244222367419395,2018-01-01,"Westchester County, NY","Male","Asian","Atherosclerotic heart disease",-0.353001084032798
+"192",0.00693544681148407,2018-01-01,"Westchester County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",-0.152401774381905
+"193",0.244222367419395,2018-01-01,"Westchester County, NY","Male","Black or African American","Atherosclerotic heart disease",0.110884819534891
+"194",0.634106982034455,2018-01-01,"Westchester County, NY","Male","White","Alzheimer disease, unspecified",0.0231226215626259
+"195",0.634106982034455,2018-01-01,"Westchester County, NY","Male","White","Acute myocardial infarction, unspecified",0.649995464221666
+"196",-0.131709874046979,2018-01-01,"Yates County, NY","Male","White","Unspecified dementia",-0.315388713473256
+"197",-0.131709874046979,2018-01-01,"Yates County, NY","Male","White","Acute myocardial infarction, unspecified",-0.327926170326437
+"198",-0.131709874046979,2020-01-01,"Albany County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",-0.240163972354171
+"199",-0.131709874046979,2020-01-01,"Albany County, NY","Female","White","Atherosclerotic heart disease",0.925819514991643
+"200",-0.131709874046979,2020-01-01,"Albany County, NY","Female","White","COVID-19",0.787907489606655
+"201",-0.131709874046979,2020-01-01,"Albany County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",0.286409215479423
+"202",-0.131709874046979,2020-01-01,"Albany County, NY","Male","White","Acute myocardial infarction, unspecified",-0.127326860675544
+"203",-0.131709874046979,2020-01-01,"Allegany County, NY","Female","White","Unspecified dementia",-0.202551601794629
+"204",-0.131709874046979,2020-01-01,"Allegany County, NY","Male","White","COVID-19",-0.0521021195564589
+"205",1.30429399374704,2020-01-01,"Bronx County, NY","Female","Asian","COVID-19",0.198647017507157
+"206",0.00693544681148407,2020-01-01,"Bronx County, NY","Female","Black or African American","Unspecified dementia",0.186109560653976
+"207",0.00693544681148407,2020-01-01,"Bronx County, NY","Female","Black or African American","Acute myocardial infarction, unspecified",0.599845636808943
+"208",0.634106982034455,2020-01-01,"Bronx County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",0.361633956598507
+"209",6.12597084978787,2020-01-01,"Bronx County, NY","Female","White","COVID-19",12.7737162412475
+"210",0.00693544681148407,2020-01-01,"Bronx County, NY","Male","Black or African American","Pancreas, unspecified - Malignant neoplasms",-0.114789403822363
+"211",6.17378999611891,2020-01-01,"Bronx County, NY","Male","Black or African American","Atherosclerotic heart disease",1.85359132212702
+"212",0.00693544681148407,2020-01-01,"Bronx County, NY","Male","Black or African American","Chronic obstructive pulmonary disease, unspecified",-0.0646395764096397
+"213",0.634106982034455,2020-01-01,"Bronx County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",0.0231226215626259
+"214",1.61175553329496,2020-01-01,"Bronx County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",0.700145291634389
+"215",1.61175553329496,2020-01-01,"Bronx County, NY","Male","White","Unspecified dementia",0.24879684491988
+"216",0.634106982034455,2020-01-01,"Bronx County, NY","Male","White","Alzheimer disease, unspecified",-0.0270272058500973
+"217",-0.131709874046979,2020-01-01,"Broome County, NY","Female","White","Alzheimer disease, unspecified",0.110884819534891
+"218",-0.131709874046979,2020-01-01,"Broome County, NY","Female","White","Atherosclerotic heart disease",0.0732724489753491
+"219",-0.131709874046979,2020-01-01,"Broome County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",-0.315388713473256
+"220",-0.131709874046979,2020-01-01,"Cattaraugus County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.22762651550099
+"221",-0.131709874046979,2020-01-01,"Cattaraugus County, NY","Male","White","Acute myocardial infarction, unspecified",-0.0144897489969165
+"222",-0.131709874046979,2020-01-01,"Cattaraugus County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.240163972354171
+"223",-0.131709874046979,2020-01-01,"Cayuga County, NY","Female","White","COVID-19",-0.353001084032798
+"224",-0.131709874046979,2020-01-01,"Cayuga County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.202551601794629
+"225",-0.131709874046979,2020-01-01,"Chautauqua County, NY","Female","White","Alzheimer disease, unspecified",-0.315388713473256
+"226",-0.131709874046979,2020-01-01,"Chautauqua County, NY","Female","White","Acute myocardial infarction, unspecified",-0.152401774381905
+"227",-0.131709874046979,2020-01-01,"Chautauqua County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",-0.240163972354171
+"228",-0.131709874046979,2020-01-01,"Chautauqua County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.0646395764096397
+"229",-0.131709874046979,2020-01-01,"Chautauqua County, NY","Male","White","Atherosclerotic heart disease",-0.0144897489969165
+"230",-0.131709874046979,2020-01-01,"Chemung County, NY","Female","White","Unspecified dementia",0.273871758626242
+"231",-0.131709874046979,2020-01-01,"Chemung County, NY","Male","White","Acute myocardial infarction, unspecified",-0.164939231235086
+"232",-0.131709874046979,2020-01-01,"Chemung County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",-0.340463627179617
+"233",-0.131709874046979,2020-01-01,"Chenango County, NY","Female","White","COVID-19",-0.327926170326437
+"234",-0.131709874046979,2020-01-01,"Chenango County, NY","Male","White","Acute myocardial infarction, unspecified",-0.290313799766894
+"235",-0.131709874046979,2020-01-01,"Clinton County, NY","Female","White","Unspecified dementia",-0.252701429207352
+"236",-0.131709874046979,2020-01-01,"Clinton County, NY","Female","White","Acute myocardial infarction, unspecified",-0.22762651550099
+"237",-0.131709874046979,2020-01-01,"Clinton County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.202551601794629
+"238",-0.131709874046979,2020-01-01,"Columbia County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.340463627179617
+"239",-0.131709874046979,2020-01-01,"Columbia County, NY","Female","White","COVID-19",-0.240163972354171
+"240",-0.131709874046979,2020-01-01,"Columbia County, NY","Male","White","Acute myocardial infarction, unspecified",-0.353001084032798
+"241",-0.131709874046979,2020-01-01,"Cortland County, NY","Female","White","Atherosclerotic heart disease",-0.353001084032798
+"242",-0.131709874046979,2020-01-01,"Cortland County, NY","Male","White","Atherosclerotic heart disease",-0.240163972354171
+"243",-0.131709874046979,2020-01-01,"Delaware County, NY","Male","White","Acute myocardial infarction, unspecified",-0.0521021195564589
+"244",-0.131709874046979,2020-01-01,"Delaware County, NY","Male","White","Atherosclerotic heart disease",-0.240163972354171
+"245",-0.131709874046979,2020-01-01,"Dutchess County, NY","Female","Black or African American","COVID-19",-0.302851256620075
+"246",-0.131709874046979,2020-01-01,"Dutchess County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",0.211184474360338
+"247",-0.131709874046979,2020-01-01,"Dutchess County, NY","Female","White","Atherosclerotic cardiovascular disease, so described",-0.152401774381905
+"248",-0.131709874046979,2020-01-01,"Dutchess County, NY","Female","White","Atherosclerotic heart disease",1.31448067744025
+"249",-0.131709874046979,2020-01-01,"Dutchess County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.152401774381905
+"250",-0.131709874046979,2020-01-01,"Dutchess County, NY","Male","White","Acute myocardial infarction, unspecified",0.148497190094434
+"251",0.00693544681148407,2020-01-01,"Erie County, NY","Female","Black or African American","Unspecified dementia",0.161034646947615
+"252",1.61175553329496,2020-01-01,"Erie County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",2.09180300233746
+"253",0.244222367419395,2020-01-01,"Erie County, NY","Male","Black or African American","Atherosclerotic heart disease",-0.114789403822363
+"254",1.61175553329496,2020-01-01,"Erie County, NY","Male","White","Unspecified dementia",1.85359132212702
+"255",-0.131709874046979,2020-01-01,"Essex County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.353001084032798
+"256",-0.131709874046979,2020-01-01,"Fulton County, NY","Female","White","Alzheimer disease, unspecified",-0.315388713473256
+"257",-0.131709874046979,2020-01-01,"Genesee County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.277776342913713
+"258",-0.131709874046979,2020-01-01,"Genesee County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.190014144941448
+"259",-0.131709874046979,2020-01-01,"Genesee County, NY","Male","White","Acute myocardial infarction, unspecified",-0.340463627179617
+"260",-0.131709874046979,2020-01-01,"Genesee County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",-0.327926170326437
+"261",-0.131709874046979,2020-01-01,"Greene County, NY","Female","White","Acute myocardial infarction, unspecified",-0.139864317528725
+"262",-0.131709874046979,2020-01-01,"Greene County, NY","Male","White","Acute myocardial infarction, unspecified",-0.302851256620075
+"263",-0.131709874046979,2020-01-01,"Greene County, NY","Male","White","COVID-19",-0.265238886060533
+"264",-0.131709874046979,2020-01-01,"Herkimer County, NY","Female","White","Unspecified dementia",-0.0144897489969165
+"265",-0.131709874046979,2020-01-01,"Herkimer County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.340463627179617
+"266",-0.131709874046979,2020-01-01,"Jefferson County, NY","Female","White","Unspecified dementia",-0.0144897489969165
+"267",-0.131709874046979,2020-01-01,"Jefferson County, NY","Female","White","Alzheimer disease, unspecified",-0.240163972354171
+"268",-0.131709874046979,2020-01-01,"Jefferson County, NY","Female","White","Atherosclerotic heart disease",-0.102251946969182
+"269",6.17378999611891,2020-01-01,"Kings County, NY","Female","Black or African American","Atherosclerotic heart disease",6.70558712430799
+"270",0.00693544681148407,2020-01-01,"Kings County, NY","Female","Black or African American","Stroke, not specified as haemorrhage or infarction",0.273871758626242
+"271",1.61175553329496,2020-01-01,"Kings County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",1.13895628149572
+"272",1.61175553329496,2020-01-01,"Kings County, NY","Female","White","Unspecified dementia",1.03865662667027
+"273",1.30429399374704,2020-01-01,"Kings County, NY","Male","Asian","Atherosclerotic heart disease",1.1514937383489
+"274",0.00693544681148407,2020-01-01,"Kings County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",4.09779609884639
+"275",6.17378999611891,2020-01-01,"Kings County, NY","Male","Black or African American","COVID-19",18.7164707896552
+"276",1.61175553329496,2020-01-01,"Kings County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",3.82197204807641
+"277",-0.131709874046979,2020-01-01,"Livingston County, NY","Female","White","Alzheimer disease, unspecified",-0.240163972354171
+"278",-0.131709874046979,2020-01-01,"Livingston County, NY","Male","White","COVID-19",-0.290313799766894
+"279",-0.131709874046979,2020-01-01,"Madison County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.22762651550099
+"280",-0.131709874046979,2020-01-01,"Madison County, NY","Female","White","Alzheimer disease, unspecified",-0.277776342913713
+"281",-0.131709874046979,2020-01-01,"Madison County, NY","Female","White","Atherosclerotic heart disease",-0.215089058647809
+"282",-0.131709874046979,2020-01-01,"Madison County, NY","Male","White","Unspecified dementia",-0.290313799766894
+"283",-0.131709874046979,2020-01-01,"Madison County, NY","Male","White","Atherosclerotic heart disease",-0.0646395764096397
+"284",-0.0375062742646962,2020-01-01,"Monroe County, NY","Female","Black or African American","Acute myocardial infarction, unspecified",-0.114789403822363
+"285",0.389216361675506,2020-01-01,"Monroe County, NY","Female","White","Unspecified dementia",5.35154178416447
+"286",0.389216361675506,2020-01-01,"Monroe County, NY","Female","White","Acute myocardial infarction, unspecified",0.587308179955762
+"287",-0.0375062742646962,2020-01-01,"Monroe County, NY","Male","Black or African American","Acute myocardial infarction, unspecified",-0.190014144941448
+"288",0.389216361675506,2020-01-01,"Monroe County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",0.24879684491988
+"289",0.389216361675506,2020-01-01,"Monroe County, NY","Male","White","Acute myocardial infarction, unspecified",0.963431885551186
+"290",1.1288718053312,2020-01-01,"Monroe County, NY","Male","White","COVID-19",2.88166278408785
+"291",-0.131709874046979,2020-01-01,"Montgomery County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.277776342913713
+"292",-0.131709874046979,2020-01-01,"Montgomery County, NY","Male","White","COVID-19",-0.277776342913713
+"293",0.00693544681148407,2020-01-01,"Nassau County, NY","Female","Black or African American","Unspecified dementia",-0.202551601794629
+"294",0.634106982034455,2020-01-01,"Nassau County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",0.624920550515304
+"295",0.634106982034455,2020-01-01,"Nassau County, NY","Female","White","Alzheimer disease, unspecified",1.69060438303567
+"296",10.6996626646784,2020-01-01,"Nassau County, NY","Female","White","Atherosclerotic heart disease",11.3444461599849
+"297",0.634106982034455,2020-01-01,"Nassau County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",1.36463050485297
+"298",0.244222367419395,2020-01-01,"Nassau County, NY","Male","Asian","COVID-19",1.33955559114661
+"299",0.244222367419395,2020-01-01,"Nassau County, NY","Male","Black or African American","Atherosclerotic heart disease",0.838057317019378
+"300",0.00693544681148407,2020-01-01,"Nassau County, NY","Male","Black or African American","Chronic obstructive pulmonary disease, unspecified",-0.340463627179617
+"301",-0.0375062742646962,2020-01-01,"New York County, NY","Female","Asian","Stroke, not specified as haemorrhage or infarction",-0.327926170326437
+"302",0.389216361675506,2020-01-01,"New York County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",0.424321240864411
+"303",0.389216361675506,2020-01-01,"New York County, NY","Female","White","Atherosclerotic cardiovascular disease, so described",2.84405041352831
+"304",0.389216361675506,2020-01-01,"New York County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",0.0732724489753491
+"305",-0.0375062742646962,2020-01-01,"New York County, NY","Male","Asian","COVID-19",1.38970541855933
+"306",-0.0375062742646962,2020-01-01,"New York County, NY","Male","Black or African American","Chronic obstructive pulmonary disease, unspecified",-0.327926170326437
+"307",0.389216361675506,2020-01-01,"New York County, NY","Male","White","Alzheimer disease, unspecified",0.273871758626242
+"308",3.76465795960472,2020-01-01,"New York County, NY","Male","White","COVID-19",12.2596805102671
+"309",-0.131709874046979,2020-01-01,"Niagara County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",0.286409215479423
+"310",-0.131709874046979,2020-01-01,"Niagara County, NY","Female","White","Unspecified dementia",1.07626899722981
+"311",-0.131709874046979,2020-01-01,"Niagara County, NY","Female","White","Alzheimer disease, unspecified",-0.152401774381905
+"312",-0.131709874046979,2020-01-01,"Niagara County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.127326860675544
+"313",-0.131709874046979,2020-01-01,"Niagara County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",0.311484129185784
+"314",-0.131709874046979,2020-01-01,"Niagara County, NY","Male","White","Atherosclerotic heart disease",0.436858697717592
+"315",0.389216361675506,2020-01-01,"Oneida County, NY","Female","White","Alzheimer disease, unspecified",0.0481975352689875
+"316",1.1288718053312,2020-01-01,"Oneida County, NY","Female","White","COVID-19",1.11388136778936
+"317",0.389216361675506,2020-01-01,"Oneida County, NY","Male","White","Unspecified dementia",0.487008525130316
+"318",0.389216361675506,2020-01-01,"Oneida County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.0607349921221683
+"319",1.1288718053312,2020-01-01,"Oneida County, NY","Male","White","COVID-19",0.737757662193931
+"320",-0.0375062742646962,2020-01-01,"Onondaga County, NY","Female","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.327926170326437
+"321",-0.0375062742646962,2020-01-01,"Onondaga County, NY","Female","Black or African American","Unspecified dementia",-0.340463627179617
+"322",1.1288718053312,2020-01-01,"Onondaga County, NY","Female","White","Atherosclerotic heart disease",0.950894428698005
+"323",1.1288718053312,2020-01-01,"Onondaga County, NY","Female","White","COVID-19",2.31747722569471
+"324",-0.0375062742646962,2020-01-01,"Onondaga County, NY","Male","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.315388713473256
+"325",0.389216361675506,2020-01-01,"Onondaga County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.127326860675544
+"326",0.389216361675506,2020-01-01,"Onondaga County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",0.737757662193931
+"327",0.389216361675506,2020-01-01,"Onondaga County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.223721931213519
+"328",-0.131709874046979,2020-01-01,"Ontario County, NY","Female","White","Alzheimer disease, unspecified",-0.190014144941448
+"329",-0.131709874046979,2020-01-01,"Ontario County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.252701429207352
+"330",0.389216361675506,2020-01-01,"Orange County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",-0.190014144941448
+"331",0.389216361675506,2020-01-01,"Orange County, NY","Female","White","Unspecified dementia",0.675070377928027
+"332",0.389216361675506,2020-01-01,"Orange County, NY","Male","White","Acute myocardial infarction, unspecified",0.198647017507157
+"333",1.1288718053312,2020-01-01,"Orange County, NY","Male","White","Atherosclerotic heart disease",0.687607834781208
+"334",0.389216361675506,2020-01-01,"Orange County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.277776342913713
+"335",-0.131709874046979,2020-01-01,"Orleans County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.315388713473256
+"336",-0.131709874046979,2020-01-01,"Oswego County, NY","Female","White","Acute myocardial infarction, unspecified",-0.277776342913713
+"337",-0.131709874046979,2020-01-01,"Oswego County, NY","Female","White","Atherosclerotic heart disease",-0.0771770332628205
+"338",-0.131709874046979,2020-01-01,"Oswego County, NY","Female","White","COVID-19",-0.215089058647809
+"339",-0.131709874046979,2020-01-01,"Otsego County, NY","Male","White","Acute myocardial infarction, unspecified",-0.315388713473256
+"340",-0.131709874046979,2020-01-01,"Otsego County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.290313799766894
+"341",-0.131709874046979,2020-01-01,"Putnam County, NY","Male","White","COVID-19",0.286409215479423
+"342",0.00693544681148407,2020-01-01,"Queens County, NY","Female","Asian","Bronchus or lung, unspecified - Malignant neoplasms",0.110884819534891
+"343",0.00693544681148407,2020-01-01,"Queens County, NY","Female","Asian","Stroke, not specified as haemorrhage or infarction",-0.265238886060533
+"344",0.00693544681148407,2020-01-01,"Queens County, NY","Female","Black or African American","Unspecified dementia",0.161034646947615
+"345",6.17378999611891,2020-01-01,"Queens County, NY","Female","Black or African American","COVID-19",7.82142078424108
+"346",1.30429399374704,2020-01-01,"Queens County, NY","Female","More than one race","COVID-19",-0.340463627179617
+"347",0.00693544681148407,2020-01-01,"Queens County, NY","Male","Asian","Alzheimer disease, unspecified",-0.215089058647809
+"348",0.00693544681148407,2020-01-01,"Queens County, NY","Male","Asian","Acute myocardial infarction, unspecified",-0.0395646627032781
+"349",0.00693544681148407,2020-01-01,"Queens County, NY","Male","Black or African American","Pancreas, unspecified - Malignant neoplasms",-0.127326860675544
+"350",0.00693544681148407,2020-01-01,"Queens County, NY","Male","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",0.123422276388072
+"351",0.00693544681148407,2020-01-01,"Queens County, NY","Male","Black or African American","Acute myocardial infarction, unspecified",0.236259388066699
+"352",0.634106982034455,2020-01-01,"Queens County, NY","Male","White","Alzheimer disease, unspecified",0.198647017507157
+"353",-0.131709874046979,2020-01-01,"Rensselaer County, NY","Female","White","Acute myocardial infarction, unspecified",-0.277776342913713
+"354",-0.131709874046979,2020-01-01,"Rensselaer County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.00195229214373572
+"355",-0.131709874046979,2020-01-01,"Rensselaer County, NY","Male","White","Atherosclerotic heart disease",0.374171413451688
+"356",0.389216361675506,2020-01-01,"Richmond County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",-0.0897144901160013
+"357",-0.0375062742646962,2020-01-01,"Richmond County, NY","Male","Asian","Atherosclerotic heart disease",-0.215089058647809
+"358",-0.0375062742646962,2020-01-01,"Richmond County, NY","Male","Asian","COVID-19",0.0481975352689875
+"359",-0.0375062742646962,2020-01-01,"Richmond County, NY","Male","Black or African American","COVID-19",0.5622332662494
+"360",0.389216361675506,2020-01-01,"Richmond County, NY","Male","White","Unspecified dementia",-0.290313799766894
+"361",0.389216361675506,2020-01-01,"Richmond County, NY","Male","White","Alzheimer disease, unspecified",-0.265238886060533
+"362",0.389216361675506,2020-01-01,"Richmond County, NY","Male","White","Acute myocardial infarction, unspecified",0.135959733241253
+"363",3.76465795960472,2020-01-01,"Richmond County, NY","Male","White","Atherosclerotic heart disease",3.7592847638105
+"364",-0.131709874046979,2020-01-01,"Rockland County, NY","Female","Asian","COVID-19",-0.240163972354171
+"365",-0.131709874046979,2020-01-01,"Rockland County, NY","Female","Black or African American","Acute myocardial infarction, unspecified",-0.327926170326437
+"366",-0.131709874046979,2020-01-01,"Rockland County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",-0.302851256620075
+"367",-0.131709874046979,2020-01-01,"Rockland County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.127326860675544
+"368",-0.131709874046979,2020-01-01,"Rockland County, NY","Male","Black or African American","Atherosclerotic heart disease",-0.252701429207352
+"369",-0.131709874046979,2020-01-01,"Rockland County, NY","Male","White","Atherosclerotic heart disease",0.838057317019378
+"370",-0.131709874046979,2020-01-01,"St. Lawrence County, NY","Male","White","Acute myocardial infarction, unspecified",-0.22762651550099
+"371",-0.131709874046979,2020-01-01,"Saratoga County, NY","Female","White","COVID-19",-0.177476688088267
+"372",-0.131709874046979,2020-01-01,"Saratoga County, NY","Male","White","Acute myocardial infarction, unspecified",-0.177476688088267
+"373",-0.131709874046979,2020-01-01,"Saratoga County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",-0.240163972354171
+"374",-0.131709874046979,2020-01-01,"Schenectady County, NY","Female","White","Unspecified dementia",0.298946672332603
+"375",-0.131709874046979,2020-01-01,"Schenectady County, NY","Female","White","Alzheimer disease, unspecified",0.261334301773061
+"376",-0.131709874046979,2020-01-01,"Schenectady County, NY","Male","White","COVID-19",0.0105851647094451
+"377",-0.131709874046979,2020-01-01,"Seneca County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.327926170326437
+"378",-0.131709874046979,2020-01-01,"Steuben County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.0395646627032781
+"379",-0.131709874046979,2020-01-01,"Steuben County, NY","Female","White","Unspecified dementia",-0.102251946969182
+"380",-0.131709874046979,2020-01-01,"Steuben County, NY","Female","White","Alzheimer disease, unspecified",-0.177476688088267
+"381",-0.131709874046979,2020-01-01,"Steuben County, NY","Male","White","Unspecified dementia",-0.252701429207352
+"382",-0.131709874046979,2020-01-01,"Steuben County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",-0.22762651550099
+"383",0.244222367419395,2020-01-01,"Suffolk County, NY","Female","Asian","Atherosclerotic heart disease",-0.190014144941448
+"384",0.00693544681148407,2020-01-01,"Suffolk County, NY","Female","Black or African American","Acute myocardial infarction, unspecified",-0.340463627179617
+"385",1.61175553329496,2020-01-01,"Suffolk County, NY","Female","White","Unspecified dementia",3.60883528157233
+"386",0.634106982034455,2020-01-01,"Suffolk County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",0.938356971844824
+"387",0.634106982034455,2020-01-01,"Suffolk County, NY","Male","White","Alzheimer disease, unspecified",0.524620895689858
+"388",-0.131709874046979,2020-01-01,"Sullivan County, NY","Female","White","Alzheimer disease, unspecified",-0.327926170326437
+"389",-0.131709874046979,2020-01-01,"Sullivan County, NY","Male","White","Atherosclerotic heart disease",-0.177476688088267
+"390",-0.131709874046979,2020-01-01,"Tompkins County, NY","Female","White","Unspecified dementia",-0.0144897489969165
+"391",-0.131709874046979,2020-01-01,"Tompkins County, NY","Female","White","Alzheimer disease, unspecified",-0.327926170326437
+"392",-0.131709874046979,2020-01-01,"Tompkins County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.290313799766894
+"393",-0.131709874046979,2020-01-01,"Tompkins County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.290313799766894
+"394",-0.131709874046979,2020-01-01,"Tompkins County, NY","Male","White","Unspecified dementia",-0.215089058647809
+"395",-0.131709874046979,2020-01-01,"Ulster County, NY","Female","White","Unspecified dementia",0.135959733241253
+"396",-0.131709874046979,2020-01-01,"Ulster County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.139864317528725
+"397",-0.131709874046979,2020-01-01,"Ulster County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",-0.240163972354171
+"398",-0.131709874046979,2020-01-01,"Ulster County, NY","Male","White","Atherosclerotic heart disease",0.599845636808943
+"399",-0.131709874046979,2020-01-01,"Warren County, NY","Female","White","Unspecified dementia",0.0105851647094451
+"400",-0.131709874046979,2020-01-01,"Warren County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.22762651550099
+"401",-0.131709874046979,2020-01-01,"Warren County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.290313799766894
+"402",-0.131709874046979,2020-01-01,"Washington County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.240163972354171
+"403",-0.131709874046979,2020-01-01,"Wayne County, NY","Male","White","Atherosclerotic heart disease",-0.0521021195564589
+"404",1.61175553329496,2020-01-01,"Westchester County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",0.825519860166197
+"405",0.634106982034455,2020-01-01,"Westchester County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",0.24879684491988
+"406",0.00693544681148407,2020-01-01,"Westchester County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",0.173572103800795
+"407",0.634106982034455,2020-01-01,"Westchester County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",0.349096499745327
+"408",3.03937079397786,2020-01-01,"Westchester County, NY","Male","White","Atherosclerotic heart disease",4.04764627143366
+"409",-0.131709874046979,2020-01-01,"Wyoming County, NY","Female","White","COVID-19",-0.327926170326437
+"410",-0.131709874046979,2020-01-01,"Yates County, NY","Male","White","Unspecified dementia",-0.353001084032798
+"411",-0.131709874046979,2021-01-01,"Albany County, NY","Female","Black or African American","Atherosclerotic heart disease",-0.340463627179617
+"412",-0.131709874046979,2021-01-01,"Albany County, NY","Female","White","Alzheimer disease, unspecified",0.148497190094434
+"413",-0.131709874046979,2021-01-01,"Albany County, NY","Female","White","Atherosclerotic heart disease",0.913282058138463
+"414",-0.131709874046979,2021-01-01,"Albany County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.22762651550099
+"415",-0.131709874046979,2021-01-01,"Albany County, NY","Male","White","Alzheimer disease, unspecified",-0.0771770332628205
+"416",1.30429399374704,2021-01-01,"Bronx County, NY","Female","Asian","COVID-19",-0.290313799766894
+"417",0.00693544681148407,2021-01-01,"Bronx County, NY","Female","Black or African American","Alzheimer disease, unspecified",0.0231226215626259
+"418",0.00693544681148407,2021-01-01,"Bronx County, NY","Female","Black or African American","Acute myocardial infarction, unspecified",0.336559042892146
+"419",2.69096146668947,2021-01-01,"Bronx County, NY","Female","Black or African American","Atherosclerotic heart disease",1.20164356576162
+"420",0.634106982034455,2021-01-01,"Bronx County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",0.0356600784158067
+"421",1.61175553329496,2021-01-01,"Bronx County, NY","Female","White","Unspecified dementia",0.800444946459835
+"422",0.634106982034455,2021-01-01,"Bronx County, NY","Female","White","Acute myocardial infarction, unspecified",0.700145291634389
+"423",3.03937079397786,2021-01-01,"Bronx County, NY","Female","White","Atherosclerotic heart disease",3.03211226632602
+"424",0.634106982034455,2021-01-01,"Bronx County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",0.361633956598507
+"425",1.30429399374704,2021-01-01,"Bronx County, NY","Male","Asian","COVID-19",0.0732724489753491
+"426",1.61175553329496,2021-01-01,"Bronx County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",0.963431885551186
+"427",0.634106982034455,2021-01-01,"Bronx County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.0231226215626259
+"428",-0.131709874046979,2021-01-01,"Broome County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",-0.240163972354171
+"429",-0.131709874046979,2021-01-01,"Broome County, NY","Female","White","Alzheimer disease, unspecified",0.0356600784158067
+"430",-0.131709874046979,2021-01-01,"Broome County, NY","Female","White","Acute myocardial infarction, unspecified",-0.114789403822363
+"431",-0.131709874046979,2021-01-01,"Broome County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",-0.315388713473256
+"432",-0.131709874046979,2021-01-01,"Broome County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.0771770332628205
+"433",-0.131709874046979,2021-01-01,"Cattaraugus County, NY","Male","White","Unspecified dementia",-0.240163972354171
+"434",-0.131709874046979,2021-01-01,"Cattaraugus County, NY","Male","White","COVID-19",0.675070377928027
+"435",-0.131709874046979,2021-01-01,"Cayuga County, NY","Female","White","Unspecified dementia",-0.0646395764096397
+"436",-0.131709874046979,2021-01-01,"Chautauqua County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.0646395764096397
+"437",-0.131709874046979,2021-01-01,"Chautauqua County, NY","Female","White","Unspecified dementia",0.39924632715805
+"438",-0.131709874046979,2021-01-01,"Chautauqua County, NY","Female","White","Atherosclerotic heart disease",-0.114789403822363
+"439",-0.131709874046979,2021-01-01,"Chautauqua County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",-0.290313799766894
+"440",-0.131709874046979,2021-01-01,"Chemung County, NY","Female","White","Unspecified dementia",0.110884819534891
+"441",-0.131709874046979,2021-01-01,"Chenango County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.290313799766894
+"442",-0.131709874046979,2021-01-01,"Chenango County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.315388713473256
+"443",-0.131709874046979,2021-01-01,"Columbia County, NY","Male","White","Unspecified dementia",-0.252701429207352
+"444",-0.131709874046979,2021-01-01,"Columbia County, NY","Male","White","COVID-19",-0.0771770332628205
+"445",-0.131709874046979,2021-01-01,"Cortland County, NY","Female","White","Unspecified dementia",-0.327926170326437
+"446",-0.131709874046979,2021-01-01,"Cortland County, NY","Female","White","COVID-19",-0.164939231235086
+"447",-0.131709874046979,2021-01-01,"Cortland County, NY","Male","White","Acute myocardial infarction, unspecified",-0.302851256620075
+"448",-0.131709874046979,2021-01-01,"Delaware County, NY","Male","White","Atherosclerotic heart disease",-0.215089058647809
+"449",-0.131709874046979,2021-01-01,"Delaware County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.353001084032798
+"450",-0.131709874046979,2021-01-01,"Dutchess County, NY","Female","White","Alzheimer disease, unspecified",-0.139864317528725
+"451",-0.131709874046979,2021-01-01,"Dutchess County, NY","Female","White","COVID-19",1.40224287541251
+"452",-0.131709874046979,2021-01-01,"Dutchess County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.202551601794629
+"453",-0.131709874046979,2021-01-01,"Dutchess County, NY","Male","White","Unspecified dementia",-0.152401774381905
+"454",-0.131709874046979,2021-01-01,"Dutchess County, NY","Male","White","Acute myocardial infarction, unspecified",0.123422276388072
+"455",0.00693544681148407,2021-01-01,"Erie County, NY","Female","Black or African American","Chronic obstructive pulmonary disease, unspecified",-0.277776342913713
+"456",0.00693544681148407,2021-01-01,"Erie County, NY","Male","Black or African American","Stroke, not specified as haemorrhage or infarction",-0.302851256620075
+"457",0.634106982034455,2021-01-01,"Erie County, NY","Male","White","Acute myocardial infarction, unspecified",1.65299201247613
+"458",0.634106982034455,2021-01-01,"Erie County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",0.311484129185784
+"459",-0.131709874046979,2021-01-01,"Essex County, NY","Female","White","Unspecified dementia",-0.215089058647809
+"460",-0.131709874046979,2021-01-01,"Essex County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.353001084032798
+"461",-0.131709874046979,2021-01-01,"Franklin County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.353001084032798
+"462",-0.131709874046979,2021-01-01,"Franklin County, NY","Female","White","Unspecified dementia",-0.215089058647809
+"463",-0.131709874046979,2021-01-01,"Franklin County, NY","Female","White","Atherosclerotic heart disease",-0.265238886060533
+"464",-0.131709874046979,2021-01-01,"Franklin County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.265238886060533
+"465",-0.131709874046979,2021-01-01,"Fulton County, NY","Female","White","Unspecified dementia",-0.252701429207352
+"466",-0.131709874046979,2021-01-01,"Fulton County, NY","Female","White","Atherosclerotic heart disease",-0.340463627179617
+"467",-0.131709874046979,2021-01-01,"Fulton County, NY","Female","White","COVID-19",0.0732724489753491
+"468",-0.131709874046979,2021-01-01,"Fulton County, NY","Male","White","Atherosclerotic heart disease",-0.152401774381905
+"469",-0.131709874046979,2021-01-01,"Genesee County, NY","Male","White","COVID-19",0.311484129185784
+"470",-0.131709874046979,2021-01-01,"Greene County, NY","Male","White","Acute myocardial infarction, unspecified",-0.177476688088267
+"471",-0.131709874046979,2021-01-01,"Herkimer County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.315388713473256
+"472",-0.131709874046979,2021-01-01,"Jefferson County, NY","Female","White","Unspecified dementia",0.148497190094434
+"473",-0.131709874046979,2021-01-01,"Jefferson County, NY","Female","White","COVID-19",0.148497190094434
+"474",-0.131709874046979,2021-01-01,"Jefferson County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.102251946969182
+"475",-0.131709874046979,2021-01-01,"Jefferson County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.353001084032798
+"476",1.61175553329496,2021-01-01,"Kings County, NY","Female","White","Atherosclerotic cardiovascular disease, so described",1.90374114953975
+"477",1.30429399374704,2021-01-01,"Kings County, NY","Male","Asian","COVID-19",2.09180300233746
+"478",0.00693544681148407,2021-01-01,"Kings County, NY","Male","Black or African American","Unspecified dementia",-0.190014144941448
+"479",0.00693544681148407,2021-01-01,"Kings County, NY","Male","Black or African American","Alzheimer disease, unspecified",-0.315388713473256
+"480",0.634106982034455,2021-01-01,"Kings County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",0.524620895689858
+"481",0.634106982034455,2021-01-01,"Kings County, NY","Male","White","Acute myocardial infarction, unspecified",1.2141810226148
+"482",1.61175553329496,2021-01-01,"Kings County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",3.27032394653645
+"483",-0.131709874046979,2021-01-01,"Livingston County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.290313799766894
+"484",-0.131709874046979,2021-01-01,"Livingston County, NY","Male","White","COVID-19",-0.0395646627032781
+"485",-0.131709874046979,2021-01-01,"Madison County, NY","Male","White","COVID-19",-0.0144897489969165
+"486",-0.0375062742646962,2021-01-01,"Monroe County, NY","Female","Black or African American","Acute myocardial infarction, unspecified",-0.265238886060533
+"487",-0.0375062742646962,2021-01-01,"Monroe County, NY","Female","Black or African American","Atherosclerotic heart disease",-0.265238886060533
+"488",0.389216361675506,2021-01-01,"Monroe County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",1.22671847946798
+"489",1.1288718053312,2021-01-01,"Monroe County, NY","Female","White","COVID-19",3.85958441863595
+"490",-0.0375062742646962,2021-01-01,"Monroe County, NY","Male","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.152401774381905
+"491",-0.0375062742646962,2021-01-01,"Monroe County, NY","Male","Black or African American","Acute myocardial infarction, unspecified",-0.190014144941448
+"492",-0.0375062742646962,2021-01-01,"Monroe County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",-0.139864317528725
+"493",-0.0375062742646962,2021-01-01,"Monroe County, NY","Male","Black or African American","Atherosclerotic heart disease",-0.277776342913713
+"494",-0.0375062742646962,2021-01-01,"Monroe County, NY","Male","Black or African American","COVID-19",0.574770723102581
+"495",0.389216361675506,2021-01-01,"Monroe County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",1.31448067744025
+"496",-0.131709874046979,2021-01-01,"Montgomery County, NY","Male","White","Unspecified dementia",-0.315388713473256
+"497",0.00693544681148407,2021-01-01,"Nassau County, NY","Female","Asian","Bronchus or lung, unspecified - Malignant neoplasms",-0.353001084032798
+"498",0.00693544681148407,2021-01-01,"Nassau County, NY","Female","Black or African American","Pancreas, unspecified - Malignant neoplasms",-0.353001084032798
+"499",0.244222367419395,2021-01-01,"Nassau County, NY","Female","Black or African American","Atherosclerotic heart disease",0.775370032753474
+"500",0.634106982034455,2021-01-01,"Nassau County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",0.775370032753474
+"501",1.61175553329496,2021-01-01,"Nassau County, NY","Female","White","Unspecified dementia",2.27986485513517
+"502",7.25537782483266,2021-01-01,"Nassau County, NY","Female","White","Atherosclerotic heart disease",8.47336854060649
+"503",0.00693544681148407,2021-01-01,"Nassau County, NY","Male","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.340463627179617
+"504",1.61175553329496,2021-01-01,"Nassau County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",1.45239270282524
+"505",1.61175553329496,2021-01-01,"Nassau County, NY","Male","White","Unspecified dementia",1.05119408352345
+"506",0.634106982034455,2021-01-01,"Nassau County, NY","Male","White","Acute myocardial infarction, unspecified",0.900744601285282
+"507",7.25537782483266,2021-01-01,"Nassau County, NY","Male","White","Atherosclerotic heart disease",8.31038160151514
+"508",-0.0375062742646962,2021-01-01,"New York County, NY","Female","Asian","Atherosclerotic cardiovascular disease, so described",-0.277776342913713
+"509",-0.0375062742646962,2021-01-01,"New York County, NY","Female","Black or African American","Atherosclerotic cardiovascular disease, so described",0.812982403313016
+"510",0.389216361675506,2021-01-01,"New York County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",0.236259388066699
+"511",0.389216361675506,2021-01-01,"New York County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",0.273871758626242
+"512",-0.0375062742646962,2021-01-01,"New York County, NY","Male","Black or African American","Chronic obstructive pulmonary disease, unspecified",-0.290313799766894
+"513",0.389216361675506,2021-01-01,"New York County, NY","Male","White","Alzheimer disease, unspecified",0.298946672332603
+"514",0.389216361675506,2021-01-01,"New York County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.110884819534891
+"515",-0.131709874046979,2021-01-01,"Niagara County, NY","Female","White","Atherosclerotic cardiovascular disease, so described",-0.240163972354171
+"516",-0.131709874046979,2021-01-01,"Niagara County, NY","Female","White","Atherosclerotic heart disease",0.286409215479423
+"517",-0.131709874046979,2021-01-01,"Niagara County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",0.286409215479423
+"518",-0.131709874046979,2021-01-01,"Niagara County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.0481975352689875
+"519",0.389216361675506,2021-01-01,"Oneida County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",-0.22762651550099
+"520",0.389216361675506,2021-01-01,"Oneida County, NY","Female","White","Atherosclerotic cardiovascular disease, so described",-0.327926170326437
+"521",1.1288718053312,2021-01-01,"Oneida County, NY","Female","White","COVID-19",1.81597895156748
+"522",-0.0375062742646962,2021-01-01,"Oneida County, NY","Male","Asian","COVID-19",-0.353001084032798
+"523",0.389216361675506,2021-01-01,"Oneida County, NY","Male","White","Unspecified dementia",0.123422276388072
+"524",0.389216361675506,2021-01-01,"Oneida County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.240163972354171
+"525",0.389216361675506,2021-01-01,"Oneida County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.0481975352689875
+"526",0.389216361675506,2021-01-01,"Onondaga County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.152401774381905
+"527",0.389216361675506,2021-01-01,"Onondaga County, NY","Male","White","Unspecified dementia",0.637458007368485
+"528",0.389216361675506,2021-01-01,"Onondaga County, NY","Male","White","Alzheimer disease, unspecified",-0.127326860675544
+"529",0.389216361675506,2021-01-01,"Onondaga County, NY","Male","White","Acute myocardial infarction, unspecified",0.386708870304869
+"530",1.1288718053312,2021-01-01,"Onondaga County, NY","Male","White","Atherosclerotic heart disease",1.41478033226569
+"531",0.389216361675506,2021-01-01,"Onondaga County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.114789403822363
+"532",-0.131709874046979,2021-01-01,"Ontario County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.152401774381905
+"533",-0.131709874046979,2021-01-01,"Ontario County, NY","Female","White","Alzheimer disease, unspecified",-0.22762651550099
+"534",-0.131709874046979,2021-01-01,"Ontario County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",-0.277776342913713
+"535",-0.131709874046979,2021-01-01,"Ontario County, NY","Male","White","Unspecified dementia",-0.139864317528725
+"536",0.389216361675506,2021-01-01,"Orange County, NY","Female","White","Alzheimer disease, unspecified",0.236259388066699
+"537",0.389216361675506,2021-01-01,"Orange County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.139864317528725
+"538",0.389216361675506,2021-01-01,"Orange County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",0.411783784011231
+"539",0.389216361675506,2021-01-01,"Orange County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.252701429207352
+"540",-0.131709874046979,2021-01-01,"Orleans County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.315388713473256
+"541",-0.131709874046979,2021-01-01,"Orleans County, NY","Female","White","COVID-19",-0.202551601794629
+"542",-0.131709874046979,2021-01-01,"Orleans County, NY","Male","White","Unspecified dementia",-0.327926170326437
+"543",-0.131709874046979,2021-01-01,"Orleans County, NY","Male","White","Atherosclerotic heart disease",-0.315388713473256
+"544",-0.131709874046979,2021-01-01,"Oswego County, NY","Female","White","Unspecified dementia",-0.0144897489969165
+"545",-0.131709874046979,2021-01-01,"Otsego County, NY","Male","White","Unspecified dementia",-0.277776342913713
+"546",-0.131709874046979,2021-01-01,"Otsego County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",-0.302851256620075
+"547",-0.131709874046979,2021-01-01,"Putnam County, NY","Female","White","Atherosclerotic heart disease",-0.215089058647809
+"548",0.00693544681148407,2021-01-01,"Queens County, NY","Female","Asian","Bronchus or lung, unspecified - Malignant neoplasms",0.223721931213519
+"549",0.00693544681148407,2021-01-01,"Queens County, NY","Female","Asian","Unspecified dementia",-0.277776342913713
+"550",0.00693544681148407,2021-01-01,"Queens County, NY","Female","Asian","Atherosclerotic cardiovascular disease, so described",0.0983473626817107
+"551",0.00693544681148407,2021-01-01,"Queens County, NY","Female","Black or African American","Stroke, not specified as haemorrhage or infarction",-0.152401774381905
+"552",0.634106982034455,2021-01-01,"Queens County, NY","Female","White","Acute myocardial infarction, unspecified",0.612383093662124
+"553",0.634106982034455,2021-01-01,"Queens County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",0.186109560653976
+"554",0.634106982034455,2021-01-01,"Queens County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",0.737757662193931
+"555",0.00693544681148407,2021-01-01,"Queens County, NY","Male","Asian","Stroke, not specified as haemorrhage or infarction",-0.164939231235086
+"556",1.30429399374704,2021-01-01,"Queens County, NY","Male","Asian","COVID-19",4.31093286535046
+"557",0.00693544681148407,2021-01-01,"Queens County, NY","Male","Black or African American","Alzheimer disease, unspecified",-0.302851256620075
+"558",0.634106982034455,2021-01-01,"Queens County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",0.324021586038965
+"559",1.61175553329496,2021-01-01,"Queens County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",1.4774676165316
+"560",7.25537782483266,2021-01-01,"Queens County, NY","Male","White","Atherosclerotic heart disease",7.00648608878433
+"561",0.634106982034455,2021-01-01,"Queens County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.286409215479423
+"562",-0.131709874046979,2021-01-01,"Rensselaer County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",-0.177476688088267
+"563",0.389216361675506,2021-01-01,"Richmond County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",0.211184474360338
+"564",0.389216361675506,2021-01-01,"Richmond County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.114789403822363
+"565",0.389216361675506,2021-01-01,"Richmond County, NY","Male","White","Acute myocardial infarction, unspecified",0.286409215479423
+"566",0.389216361675506,2021-01-01,"Richmond County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.135959733241253
+"567",-0.131709874046979,2021-01-01,"Rockland County, NY","Female","White","Acute myocardial infarction, unspecified",0.0356600784158067
+"568",-0.131709874046979,2021-01-01,"Rockland County, NY","Female","White","Atherosclerotic heart disease",0.499545981983496
+"569",-0.131709874046979,2021-01-01,"Rockland County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.252701429207352
+"570",-0.131709874046979,2021-01-01,"Rockland County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.215089058647809
+"571",-0.131709874046979,2021-01-01,"St. Lawrence County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.164939231235086
+"572",-0.131709874046979,2021-01-01,"St. Lawrence County, NY","Male","White","Unspecified dementia",-0.164939231235086
+"573",-0.131709874046979,2021-01-01,"St. Lawrence County, NY","Male","White","Acute myocardial infarction, unspecified",-0.315388713473256
+"574",-0.131709874046979,2021-01-01,"St. Lawrence County, NY","Male","White","COVID-19",0.411783784011231
+"575",-0.131709874046979,2021-01-01,"Saratoga County, NY","Female","White","Acute myocardial infarction, unspecified",-0.240163972354171
+"576",-0.131709874046979,2021-01-01,"Saratoga County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.0646395764096397
+"577",-0.131709874046979,2021-01-01,"Schenectady County, NY","Female","White","COVID-19",0.424321240864411
+"578",-0.131709874046979,2021-01-01,"Schenectady County, NY","Male","Black or African American","COVID-19",-0.340463627179617
+"579",-0.131709874046979,2021-01-01,"Schoharie County, NY","Female","White","COVID-19",-0.290313799766894
+"580",-0.131709874046979,2021-01-01,"Schoharie County, NY","Male","White","Atherosclerotic heart disease",-0.327926170326437
+"581",-0.131709874046979,2021-01-01,"Steuben County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.0897144901160013
+"582",-0.131709874046979,2021-01-01,"Steuben County, NY","Female","White","Atherosclerotic heart disease",-0.177476688088267
+"583",-0.131709874046979,2021-01-01,"Steuben County, NY","Male","White","Acute myocardial infarction, unspecified",-0.177476688088267
+"584",-0.131709874046979,2021-01-01,"Steuben County, NY","Male","White","COVID-19",0.512083438836677
+"585",0.244222367419395,2021-01-01,"Suffolk County, NY","Female","Asian","Atherosclerotic heart disease",-0.315388713473256
+"586",1.61175553329496,2021-01-01,"Suffolk County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",2.80643804296876
+"587",0.634106982034455,2021-01-01,"Suffolk County, NY","Female","White","Acute myocardial infarction, unspecified",1.11388136778936
+"588",0.244222367419395,2021-01-01,"Suffolk County, NY","Male","Black or African American","COVID-19",0.499545981983496
+"589",0.634106982034455,2021-01-01,"Suffolk County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",0.963431885551186
+"590",0.634106982034455,2021-01-01,"Suffolk County, NY","Male","White","Acute myocardial infarction, unspecified",1.49000507338478
+"591",1.61175553329496,2021-01-01,"Suffolk County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",1.61537964191659
+"592",-0.131709874046979,2021-01-01,"Sullivan County, NY","Female","White","Alzheimer disease, unspecified",-0.353001084032798
+"593",-0.131709874046979,2021-01-01,"Sullivan County, NY","Female","White","Acute myocardial infarction, unspecified",-0.302851256620075
+"594",-0.131709874046979,2021-01-01,"Tioga County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.353001084032798
+"595",-0.131709874046979,2021-01-01,"Tompkins County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.290313799766894
+"596",-0.131709874046979,2021-01-01,"Tompkins County, NY","Male","White","Atherosclerotic heart disease",-0.302851256620075
+"597",-0.131709874046979,2021-01-01,"Ulster County, NY","Female","White","Acute myocardial infarction, unspecified",-0.215089058647809
+"598",-0.131709874046979,2021-01-01,"Ulster County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.139864317528725
+"599",-0.131709874046979,2021-01-01,"Warren County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.22762651550099
+"600",-0.131709874046979,2021-01-01,"Warren County, NY","Male","White","COVID-19",0.0858099058285299
+"601",-0.131709874046979,2021-01-01,"Washington County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.315388713473256
+"602",-0.131709874046979,2021-01-01,"Washington County, NY","Female","White","COVID-19",0.0607349921221683
+"603",-0.131709874046979,2021-01-01,"Washington County, NY","Male","White","Unspecified dementia",-0.277776342913713
+"604",-0.131709874046979,2021-01-01,"Washington County, NY","Male","White","Acute myocardial infarction, unspecified",-0.202551601794629
+"605",-0.131709874046979,2021-01-01,"Wayne County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.127326860675544
+"606",-0.131709874046979,2021-01-01,"Wayne County, NY","Female","White","Alzheimer disease, unspecified",-0.327926170326437
+"607",-0.131709874046979,2021-01-01,"Wayne County, NY","Female","White","COVID-19",0.0356600784158067
+"608",0.00693544681148407,2021-01-01,"Westchester County, NY","Female","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.202551601794629
+"609",0.00693544681148407,2021-01-01,"Westchester County, NY","Female","Black or African American","Acute myocardial infarction, unspecified",-0.240163972354171
+"610",0.244222367419395,2021-01-01,"Westchester County, NY","Female","Black or African American","COVID-19",0.599845636808943
+"611",1.61175553329496,2021-01-01,"Westchester County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",1.12641882464254
+"612",6.12597084978787,2021-01-01,"Westchester County, NY","Female","White","COVID-19",3.22017411912373
+"613",0.244222367419395,2021-01-01,"Westchester County, NY","Male","Asian","COVID-19",-0.0521021195564589
+"614",0.00693544681148407,2021-01-01,"Westchester County, NY","Male","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.302851256620075
+"615",0.00693544681148407,2021-01-01,"Westchester County, NY","Male","Black or African American","Acute myocardial infarction, unspecified",-0.315388713473256
+"616",0.00693544681148407,2021-01-01,"Westchester County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",0.0105851647094451
+"617",1.61175553329496,2021-01-01,"Westchester County, NY","Male","White","Unspecified dementia",0.449396154570773
+"618",0.634106982034455,2021-01-01,"Westchester County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.0897144901160013
+"619",6.12597084978787,2021-01-01,"Westchester County, NY","Male","White","COVID-19",4.9378057080095
+"620",-0.131709874046979,2021-01-01,"Wyoming County, NY","Female","White","Atherosclerotic heart disease",-0.353001084032798
+"621",-0.131709874046979,2021-01-01,"Wyoming County, NY","Male","White","Atherosclerotic heart disease",-0.277776342913713
+"622",-0.131709874046979,2021-01-01,"Yates County, NY","Male","White","COVID-19",-0.302851256620075
+"623",-0.131709874046979,2022-01-01,"Albany County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",-0.215089058647809
+"624",-0.131709874046979,2022-01-01,"Albany County, NY","Female","White","Acute myocardial infarction, unspecified",-0.190014144941448
+"625",-0.131709874046979,2022-01-01,"Albany County, NY","Male","White","Alzheimer disease, unspecified",-0.127326860675544
+"626",-0.131709874046979,2022-01-01,"Albany County, NY","Male","White","Acute myocardial infarction, unspecified",0.0858099058285299
+"627",-0.131709874046979,2022-01-01,"Albany County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.127326860675544
+"628",-0.131709874046979,2022-01-01,"Allegany County, NY","Female","White","Acute myocardial infarction, unspecified",-0.353001084032798
+"629",0.00693544681148407,2022-01-01,"Bronx County, NY","Female","Black or African American","Atherosclerotic cardiovascular disease, so described",1.25179339317434
+"630",2.69096146668947,2022-01-01,"Bronx County, NY","Female","Black or African American","COVID-19",1.1514937383489
+"631",6.12597084978787,2022-01-01,"Bronx County, NY","Female","White","COVID-19",2.21717757086927
+"632",0.00693544681148407,2022-01-01,"Bronx County, NY","Male","Asian","Atherosclerotic cardiovascular disease, so described",-0.340463627179617
+"633",0.00693544681148407,2022-01-01,"Bronx County, NY","Male","Black or African American","Unspecified dementia",-0.127326860675544
+"634",0.00693544681148407,2022-01-01,"Bronx County, NY","Male","Black or African American","Alzheimer disease, unspecified",-0.327926170326437
+"635",2.69096146668947,2022-01-01,"Bronx County, NY","Male","Black or African American","COVID-19",1.13895628149572
+"636",1.61175553329496,2022-01-01,"Bronx County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",0.750295119047112
+"637",1.61175553329496,2022-01-01,"Bronx County, NY","Male","White","Unspecified dementia",0.0231226215626259
+"638",0.634106982034455,2022-01-01,"Bronx County, NY","Male","White","Acute myocardial infarction, unspecified",0.624920550515304
+"639",0.634106982034455,2022-01-01,"Bronx County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.00195229214373572
+"640",-0.131709874046979,2022-01-01,"Broome County, NY","Female","White","Unspecified dementia",0.637458007368485
+"641",-0.131709874046979,2022-01-01,"Broome County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",0.0356600784158067
+"642",-0.131709874046979,2022-01-01,"Broome County, NY","Male","White","Alzheimer disease, unspecified",-0.290313799766894
+"643",-0.131709874046979,2022-01-01,"Cattaraugus County, NY","Female","White","Unspecified dementia",-0.102251946969182
+"644",-0.131709874046979,2022-01-01,"Cattaraugus County, NY","Female","White","Alzheimer disease, unspecified",-0.327926170326437
+"645",-0.131709874046979,2022-01-01,"Cattaraugus County, NY","Male","White","Acute myocardial infarction, unspecified",-0.0521021195564589
+"646",-0.131709874046979,2022-01-01,"Cayuga County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.139864317528725
+"647",-0.131709874046979,2022-01-01,"Cayuga County, NY","Female","White","Alzheimer disease, unspecified",-0.353001084032798
+"648",-0.131709874046979,2022-01-01,"Cayuga County, NY","Female","White","COVID-19",-0.127326860675544
+"649",-0.131709874046979,2022-01-01,"Chautauqua County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",-0.327926170326437
+"650",-0.131709874046979,2022-01-01,"Chemung County, NY","Female","White","Alzheimer disease, unspecified",-0.327926170326437
+"651",-0.131709874046979,2022-01-01,"Chemung County, NY","Female","White","Atherosclerotic heart disease",-0.102251946969182
+"652",-0.131709874046979,2022-01-01,"Chemung County, NY","Female","White","COVID-19",-0.177476688088267
+"653",-0.131709874046979,2022-01-01,"Chemung County, NY","Male","White","Acute myocardial infarction, unspecified",-0.127326860675544
+"654",-0.131709874046979,2022-01-01,"Chemung County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",-0.340463627179617
+"655",-0.131709874046979,2022-01-01,"Chenango County, NY","Female","White","Atherosclerotic heart disease",-0.240163972354171
+"656",-0.131709874046979,2022-01-01,"Clinton County, NY","Male","White","Atherosclerotic heart disease",-0.0144897489969165
+"657",-0.131709874046979,2022-01-01,"Columbia County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.315388713473256
+"658",-0.131709874046979,2022-01-01,"Columbia County, NY","Female","White","COVID-19",-0.315388713473256
+"659",-0.131709874046979,2022-01-01,"Columbia County, NY","Male","White","Unspecified dementia",-0.327926170326437
+"660",-0.131709874046979,2022-01-01,"Columbia County, NY","Male","White","COVID-19",-0.139864317528725
+"661",-0.131709874046979,2022-01-01,"Cortland County, NY","Female","White","COVID-19",-0.327926170326437
+"662",-0.131709874046979,2022-01-01,"Delaware County, NY","Female","White","Acute myocardial infarction, unspecified",-0.152401774381905
+"663",-0.131709874046979,2022-01-01,"Delaware County, NY","Female","White","COVID-19",-0.290313799766894
+"664",-0.131709874046979,2022-01-01,"Delaware County, NY","Male","White","Acute myocardial infarction, unspecified",-0.0897144901160013
+"665",0.00693544681148407,2022-01-01,"Erie County, NY","Female","Black or African American","Alzheimer disease, unspecified",-0.340463627179617
+"666",0.00693544681148407,2022-01-01,"Erie County, NY","Female","Black or African American","Acute myocardial infarction, unspecified",-0.215089058647809
+"667",0.00693544681148407,2022-01-01,"Erie County, NY","Female","Black or African American","Chronic obstructive pulmonary disease, unspecified",-0.290313799766894
+"668",0.244222367419395,2022-01-01,"Erie County, NY","Female","Black or African American","COVID-19",0.324021586038965
+"669",0.634106982034455,2022-01-01,"Erie County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",0.286409215479423
+"670",0.634106982034455,2022-01-01,"Erie County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",1.38970541855933
+"671",0.00693544681148407,2022-01-01,"Erie County, NY","Male","Black or African American","Unspecified dementia",-0.315388713473256
+"672",0.00693544681148407,2022-01-01,"Erie County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",-0.0897144901160013
+"673",0.00693544681148407,2022-01-01,"Erie County, NY","Male","Black or African American","Stroke, not specified as haemorrhage or infarction",-0.327926170326437
+"674",1.61175553329496,2022-01-01,"Erie County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",1.90374114953975
+"675",0.634106982034455,2022-01-01,"Erie County, NY","Male","White","Alzheimer disease, unspecified",-0.00195229214373572
+"676",0.634106982034455,2022-01-01,"Erie County, NY","Male","White","Acute myocardial infarction, unspecified",1.43985524597206
+"677",-0.131709874046979,2022-01-01,"Essex County, NY","Male","White","Acute myocardial infarction, unspecified",-0.340463627179617
+"678",-0.131709874046979,2022-01-01,"Franklin County, NY","Female","White","COVID-19",-0.327926170326437
+"679",-0.131709874046979,2022-01-01,"Franklin County, NY","Male","White","Atherosclerotic heart disease",-0.302851256620075
+"680",-0.131709874046979,2022-01-01,"Genesee County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.240163972354171
+"681",-0.131709874046979,2022-01-01,"Genesee County, NY","Female","White","Atherosclerotic heart disease",-0.240163972354171
+"682",-0.131709874046979,2022-01-01,"Genesee County, NY","Female","White","COVID-19",-0.190014144941448
+"683",-0.131709874046979,2022-01-01,"Genesee County, NY","Male","White","Acute myocardial infarction, unspecified",-0.290313799766894
+"684",-0.131709874046979,2022-01-01,"Genesee County, NY","Male","White","Atherosclerotic heart disease",-0.164939231235086
+"685",-0.131709874046979,2022-01-01,"Greene County, NY","Female","White","Acute myocardial infarction, unspecified",-0.315388713473256
+"686",-0.131709874046979,2022-01-01,"Greene County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.252701429207352
+"687",-0.131709874046979,2022-01-01,"Greene County, NY","Male","White","COVID-19",-0.202551601794629
+"688",-0.131709874046979,2022-01-01,"Herkimer County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.265238886060533
+"689",-0.131709874046979,2022-01-01,"Jefferson County, NY","Female","White","Unspecified dementia",0.148497190094434
+"690",-0.131709874046979,2022-01-01,"Jefferson County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.190014144941448
+"691",-0.131709874046979,2022-01-01,"Jefferson County, NY","Male","White","Atherosclerotic heart disease",0.148497190094434
+"692",0.00693544681148407,2022-01-01,"Kings County, NY","Female","Asian","Unspecified dementia",-0.290313799766894
+"693",0.00693544681148407,2022-01-01,"Kings County, NY","Female","Asian","Alzheimer disease, unspecified",-0.340463627179617
+"694",1.30429399374704,2022-01-01,"Kings County, NY","Female","Asian","COVID-19",0.211184474360338
+"695",2.69096146668947,2022-01-01,"Kings County, NY","Female","Black or African American","Atherosclerotic heart disease",4.31093286535046
+"696",0.634106982034455,2022-01-01,"Kings County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",0.424321240864411
+"697",0.634106982034455,2022-01-01,"Kings County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",0.123422276388072
+"698",0.634106982034455,2022-01-01,"Kings County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",0.39924632715805
+"699",0.00693544681148407,2022-01-01,"Kings County, NY","Male","Asian","Acute myocardial infarction, unspecified",-0.102251946969182
+"700",0.00693544681148407,2022-01-01,"Kings County, NY","Male","Asian","Atherosclerotic cardiovascular disease, so described",0.135959733241253
+"701",1.30429399374704,2022-01-01,"Kings County, NY","Male","Asian","Atherosclerotic heart disease",0.737757662193931
+"702",0.00693544681148407,2022-01-01,"Kings County, NY","Male","Black or African American","Pancreas, unspecified - Malignant neoplasms",0.0983473626817107
+"703",2.69096146668947,2022-01-01,"Kings County, NY","Male","Black or African American","Atherosclerotic heart disease",2.7813631292624
+"704",0.634106982034455,2022-01-01,"Kings County, NY","Male","White","Pancreas, unspecified - Malignant neoplasms",0.5622332662494
+"705",1.61175553329496,2022-01-01,"Kings County, NY","Male","White","Unspecified dementia",-0.00195229214373572
+"706",-0.131709874046979,2022-01-01,"Livingston County, NY","Male","White","Atherosclerotic heart disease",-0.277776342913713
+"707",-0.131709874046979,2022-01-01,"Madison County, NY","Female","White","COVID-19",-0.240163972354171
+"708",-0.131709874046979,2022-01-01,"Madison County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.327926170326437
+"709",-0.0375062742646962,2022-01-01,"Monroe County, NY","Female","Black or African American","Unspecified dementia",-0.190014144941448
+"710",-0.0375062742646962,2022-01-01,"Monroe County, NY","Female","Black or African American","Atherosclerotic cardiovascular disease, so described",-0.315388713473256
+"711",0.389216361675506,2022-01-01,"Monroe County, NY","Female","White","Unspecified dementia",3.79689713437005
+"712",0.389216361675506,2022-01-01,"Monroe County, NY","Female","White","Stroke, not specified as haemorrhage or infarction",0.436858697717592
+"713",0.389216361675506,2022-01-01,"Monroe County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",0.499545981983496
+"714",-0.0375062742646962,2022-01-01,"Monroe County, NY","Male","Black or African American","Acute myocardial infarction, unspecified",-0.290313799766894
+"715",-0.0375062742646962,2022-01-01,"Monroe County, NY","Male","Black or African American","COVID-19",-0.0144897489969165
+"716",0.389216361675506,2022-01-01,"Monroe County, NY","Male","White","Alzheimer disease, unspecified",0.0732724489753491
+"717",0.389216361675506,2022-01-01,"Monroe County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",0.0858099058285299
+"718",0.389216361675506,2022-01-01,"Monroe County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.135959733241253
+"719",-0.131709874046979,2022-01-01,"Montgomery County, NY","Male","White","Atherosclerotic heart disease",-0.127326860675544
+"720",0.00693544681148407,2022-01-01,"Nassau County, NY","Female","Black or African American","Pancreas, unspecified - Malignant neoplasms",-0.327926170326437
+"721",0.00693544681148407,2022-01-01,"Nassau County, NY","Female","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.290313799766894
+"722",0.00693544681148407,2022-01-01,"Nassau County, NY","Female","Black or African American","Unspecified dementia",-0.240163972354171
+"723",0.00693544681148407,2022-01-01,"Nassau County, NY","Female","Black or African American","Stroke, not specified as haemorrhage or infarction",-0.340463627179617
+"724",0.634106982034455,2022-01-01,"Nassau County, NY","Female","White","Alzheimer disease, unspecified",1.46493015967842
+"725",0.00693544681148407,2022-01-01,"Nassau County, NY","Male","Black or African American","Unspecified dementia",-0.340463627179617
+"726",0.00693544681148407,2022-01-01,"Nassau County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",-0.114789403822363
+"727",0.244222367419395,2022-01-01,"Nassau County, NY","Male","Black or African American","Atherosclerotic heart disease",0.637458007368485
+"728",0.00693544681148407,2022-01-01,"Nassau County, NY","Male","Black or African American","Stroke, not specified as haemorrhage or infarction",-0.290313799766894
+"729",1.61175553329496,2022-01-01,"Nassau County, NY","Male","White","Unspecified dementia",0.675070377928027
+"730",0.634106982034455,2022-01-01,"Nassau County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.612383093662124
+"731",-0.0375062742646962,2022-01-01,"New York County, NY","Female","Asian","Alzheimer disease, unspecified",-0.290313799766894
+"732",-0.0375062742646962,2022-01-01,"New York County, NY","Female","Asian","Acute myocardial infarction, unspecified",-0.353001084032798
+"733",-0.0375062742646962,2022-01-01,"New York County, NY","Female","Black or African American","Pancreas, unspecified - Malignant neoplasms",-0.0270272058500973
+"734",-0.0375062742646962,2022-01-01,"New York County, NY","Female","Black or African American","Atherosclerotic cardiovascular disease, so described",0.87566968757892
+"735",-0.0375062742646962,2022-01-01,"New York County, NY","Female","Black or African American","Chronic obstructive pulmonary disease, unspecified",-0.177476688088267
+"736",0.389216361675506,2022-01-01,"New York County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",1.12641882464254
+"737",3.76465795960472,2022-01-01,"New York County, NY","Female","White","Atherosclerotic heart disease",2.61837619017105
+"738",-0.0375062742646962,2022-01-01,"New York County, NY","Male","Asian","Bronchus or lung, unspecified - Malignant neoplasms",-0.114789403822363
+"739",-0.0375062742646962,2022-01-01,"New York County, NY","Male","Asian","Chronic obstructive pulmonary disease, unspecified",-0.315388713473256
+"740",-0.0375062742646962,2022-01-01,"New York County, NY","Male","Asian","COVID-19",0.186109560653976
+"741",0.389216361675506,2022-01-01,"New York County, NY","Male","White","Alzheimer disease, unspecified",0.436858697717592
+"742",3.76465795960472,2022-01-01,"New York County, NY","Male","White","Atherosclerotic heart disease",2.58076381961151
+"743",3.76465795960472,2022-01-01,"New York County, NY","Male","White","COVID-19",2.29240231198835
+"744",-0.131709874046979,2022-01-01,"Niagara County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",0.298946672332603
+"745",-0.131709874046979,2022-01-01,"Niagara County, NY","Female","White","Unspecified dementia",0.750295119047112
+"746",-0.131709874046979,2022-01-01,"Niagara County, NY","Female","White","Acute myocardial infarction, unspecified",-0.0521021195564589
+"747",-0.131709874046979,2022-01-01,"Niagara County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.302851256620075
+"748",0.389216361675506,2022-01-01,"Oneida County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",0.161034646947615
+"749",0.389216361675506,2022-01-01,"Onondaga County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",-0.102251946969182
+"750",0.389216361675506,2022-01-01,"Onondaga County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",0.737757662193931
+"751",0.389216361675506,2022-01-01,"Onondaga County, NY","Female","White","Acute myocardial infarction, unspecified",0.0356600784158067
+"752",0.389216361675506,2022-01-01,"Onondaga County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",0.386708870304869
+"753",0.389216361675506,2022-01-01,"Onondaga County, NY","Male","White","Unspecified dementia",0.850594773872559
+"754",-0.131709874046979,2022-01-01,"Ontario County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.139864317528725
+"755",-0.0375062742646962,2022-01-01,"Orange County, NY","Female","Black or African American","COVID-19",-0.277776342913713
+"756",0.389216361675506,2022-01-01,"Orange County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",0.0105851647094451
+"757",-0.131709874046979,2022-01-01,"Orleans County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.340463627179617
+"758",-0.131709874046979,2022-01-01,"Oswego County, NY","Female","White","Alzheimer disease, unspecified",-0.353001084032798
+"759",-0.131709874046979,2022-01-01,"Oswego County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.164939231235086
+"760",-0.131709874046979,2022-01-01,"Oswego County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",-0.353001084032798
+"761",-0.131709874046979,2022-01-01,"Otsego County, NY","Female","White","Unspecified dementia",-0.0897144901160013
+"762",-0.131709874046979,2022-01-01,"Putnam County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.302851256620075
+"763",0.00693544681148407,2022-01-01,"Queens County, NY","Female","Asian","Acute myocardial infarction, unspecified",-0.152401774381905
+"764",1.30429399374704,2022-01-01,"Queens County, NY","Female","Asian","Atherosclerotic heart disease",1.97896589065883
+"765",0.00693544681148407,2022-01-01,"Queens County, NY","Female","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",0.0105851647094451
+"766",0.634106982034455,2022-01-01,"Queens County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",0.436858697717592
+"767",7.25537782483266,2022-01-01,"Queens County, NY","Female","White","COVID-19",3.87212187548913
+"768",0.00693544681148407,2022-01-01,"Queens County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",1.42731778911888
+"769",1.61175553329496,2022-01-01,"Queens County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",3.82197204807641
+"770",0.634106982034455,2022-01-01,"Queens County, NY","Male","White","Stroke, not specified as haemorrhage or infarction",0.0983473626817107
+"771",0.634106982034455,2022-01-01,"Queens County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.637458007368485
+"772",7.25537782483266,2022-01-01,"Queens County, NY","Male","White","COVID-19",4.83750605318405
+"773",-0.131709874046979,2022-01-01,"Rensselaer County, NY","Female","White","Atherosclerotic cardiovascular disease, so described",-0.327926170326437
+"774",-0.131709874046979,2022-01-01,"Rensselaer County, NY","Female","White","Atherosclerotic heart disease",-0.00195229214373572
+"775",-0.131709874046979,2022-01-01,"Rensselaer County, NY","Female","White","COVID-19",-0.00195229214373572
+"776",-0.131709874046979,2022-01-01,"Rensselaer County, NY","Male","White","Unspecified dementia",-0.277776342913713
+"777",-0.131709874046979,2022-01-01,"Rensselaer County, NY","Male","White","Alzheimer disease, unspecified",-0.302851256620075
+"778",3.76465795960472,2022-01-01,"Richmond County, NY","Female","White","COVID-19",1.36463050485297
+"779",0.389216361675506,2022-01-01,"Richmond County, NY","Male","White","Unspecified dementia",-0.327926170326437
+"780",0.389216361675506,2022-01-01,"Richmond County, NY","Male","White","Alzheimer disease, unspecified",-0.290313799766894
+"781",3.76465795960472,2022-01-01,"Richmond County, NY","Male","White","Atherosclerotic heart disease",2.48046416478606
+"782",-0.131709874046979,2022-01-01,"Rockland County, NY","Female","Black or African American","Atherosclerotic heart disease",-0.265238886060533
+"783",-0.131709874046979,2022-01-01,"Rockland County, NY","Female","Black or African American","COVID-19",-0.315388713473256
+"784",-0.131709874046979,2022-01-01,"Rockland County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.0270272058500973
+"785",-0.131709874046979,2022-01-01,"Rockland County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.202551601794629
+"786",-0.131709874046979,2022-01-01,"Rockland County, NY","Male","White","COVID-19",0.5622332662494
+"787",-0.131709874046979,2022-01-01,"St. Lawrence County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.190014144941448
+"788",-0.131709874046979,2022-01-01,"St. Lawrence County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.164939231235086
+"789",-0.131709874046979,2022-01-01,"St. Lawrence County, NY","Female","White","COVID-19",-0.114789403822363
+"790",-0.131709874046979,2022-01-01,"St. Lawrence County, NY","Male","White","Unspecified dementia",-0.290313799766894
+"791",-0.131709874046979,2022-01-01,"Saratoga County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",-0.265238886060533
+"792",-0.131709874046979,2022-01-01,"Saratoga County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",0.135959733241253
+"793",-0.131709874046979,2022-01-01,"Saratoga County, NY","Female","White","Alzheimer disease, unspecified",-0.0270272058500973
+"794",-0.131709874046979,2022-01-01,"Saratoga County, NY","Female","White","Acute myocardial infarction, unspecified",-0.240163972354171
+"795",-0.131709874046979,2022-01-01,"Saratoga County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.0395646627032781
+"796",-0.131709874046979,2022-01-01,"Saratoga County, NY","Male","White","Acute myocardial infarction, unspecified",-0.0771770332628205
+"797",-0.131709874046979,2022-01-01,"Schenectady County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.127326860675544
+"798",-0.131709874046979,2022-01-01,"Schenectady County, NY","Female","White","Atherosclerotic heart disease",0.361633956598507
+"799",-0.131709874046979,2022-01-01,"Schenectady County, NY","Male","White","Unspecified dementia",-0.164939231235086
+"800",-0.131709874046979,2022-01-01,"Steuben County, NY","Female","White","Alzheimer disease, unspecified",-0.215089058647809
+"801",-0.131709874046979,2022-01-01,"Steuben County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.127326860675544
+"802",-0.131709874046979,2022-01-01,"Steuben County, NY","Male","White","Acute myocardial infarction, unspecified",-0.302851256620075
+"803",-0.131709874046979,2022-01-01,"Steuben County, NY","Male","White","Atherosclerotic heart disease",-0.0771770332628205
+"804",-0.131709874046979,2022-01-01,"Steuben County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.164939231235086
+"805",1.61175553329496,2022-01-01,"Suffolk County, NY","Female","White","Unspecified dementia",3.28286140338963
+"806",0.634106982034455,2022-01-01,"Suffolk County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",1.99150334751201
+"807",0.244222367419395,2022-01-01,"Suffolk County, NY","Male","Asian","Atherosclerotic heart disease",-0.252701429207352
+"808",0.00693544681148407,2022-01-01,"Suffolk County, NY","Male","Black or African American","Acute myocardial infarction, unspecified",-0.340463627179617
+"809",1.61175553329496,2022-01-01,"Suffolk County, NY","Male","White","Unspecified dementia",1.35209304799979
+"810",-0.131709874046979,2022-01-01,"Sullivan County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.302851256620075
+"811",-0.131709874046979,2022-01-01,"Sullivan County, NY","Male","White","Atherosclerotic cardiovascular disease, so described",-0.277776342913713
+"812",-0.131709874046979,2022-01-01,"Tioga County, NY","Female","White","Alzheimer disease, unspecified",-0.215089058647809
+"813",-0.131709874046979,2022-01-01,"Tioga County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.315388713473256
+"814",-0.131709874046979,2022-01-01,"Warren County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.290313799766894
+"815",-0.131709874046979,2022-01-01,"Washington County, NY","Female","White","Chronic obstructive pulmonary disease, unspecified",-0.252701429207352
+"816",-0.131709874046979,2022-01-01,"Washington County, NY","Male","White","Atherosclerotic heart disease",-0.152401774381905
+"817",-0.131709874046979,2022-01-01,"Washington County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",-0.240163972354171
+"818",-0.131709874046979,2022-01-01,"Wayne County, NY","Female","White","COVID-19",-0.0395646627032781
+"819",-0.131709874046979,2022-01-01,"Wayne County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.139864317528725
+"820",-0.131709874046979,2022-01-01,"Wayne County, NY","Male","White","Unspecified dementia",-0.177476688088267
+"821",0.00693544681148407,2022-01-01,"Westchester County, NY","Female","Black or African American","Atherosclerotic cardiovascular disease, so described",-0.177476688088267
+"822",0.244222367419395,2022-01-01,"Westchester County, NY","Female","Black or African American","Atherosclerotic heart disease",0.161034646947615
+"823",0.634106982034455,2022-01-01,"Westchester County, NY","Female","White","Pancreas, unspecified - Malignant neoplasms",0.148497190094434
+"824",1.61175553329496,2022-01-01,"Westchester County, NY","Female","White","Bronchus or lung, unspecified - Malignant neoplasms",0.825519860166197
+"825",1.61175553329496,2022-01-01,"Westchester County, NY","Female","White","Unspecified dementia",2.1921026571629
+"826",0.244222367419395,2022-01-01,"Westchester County, NY","Male","Asian","Atherosclerotic heart disease",-0.302851256620075
+"827",0.00693544681148407,2022-01-01,"Westchester County, NY","Male","Black or African American","Bronchus or lung, unspecified - Malignant neoplasms",-0.22762651550099
+"828",0.00693544681148407,2022-01-01,"Westchester County, NY","Male","Black or African American","Unspecified dementia",-0.315388713473256
+"829",0.00693544681148407,2022-01-01,"Westchester County, NY","Male","Black or African American","Atherosclerotic cardiovascular disease, so described",0.0858099058285299
+"830",0.244222367419395,2022-01-01,"Westchester County, NY","Male","Black or African American","Atherosclerotic heart disease",-0.0270272058500973
+"831",0.634106982034455,2022-01-01,"Westchester County, NY","Male","White","Chronic obstructive pulmonary disease, unspecified",0.261334301773061
+"832",6.12597084978787,2022-01-01,"Westchester County, NY","Male","White","COVID-19",2.44285179422652
+"833",-0.131709874046979,2022-01-01,"Wyoming County, NY","Male","White","Bronchus or lung, unspecified - Malignant neoplasms",-0.302851256620075
+"834",-0.131709874046979,2022-01-01,"Wyoming County, NY","Male","White","COVID-19",-0.315388713473256
